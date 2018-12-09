@@ -7,7 +7,7 @@ import com.qin.model.BaseEntity;
 
 /** 
  * @Description 新闻对象
- *
+ * @author 王鑫 
  * @date Mar 16, 2017 3:25:39 PM  
  */
 public class News implements BaseEntity<String> {
