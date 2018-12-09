@@ -48,9 +48,9 @@
             <c:if test="${page!=null && (page.list)!= null && fn:length(page.list) > 0 }">
                 <c:forEach var="n" items="${page.list }">
                     <tr>
-                        <%--<td>${n.title }</td>--%>
-                        <%--<td>${n.description }</td>--%>
-                        <%--<td>${n.address }</td>--%>
+                            <%--<td>${n.title }</td>--%>
+                            <%--<td>${n.description }</td>--%>
+                            <%--<td>${n.address }</td>--%>
 
                         <td>${n.id}</td>
                         <td>${n.name}</td>
@@ -65,9 +65,9 @@
                         <td>${n.type}</td>
                         <td>${n.city}</td>
                         <td>${n.discount}</td>
-                        <td><fmt:formatDate value="${n.deleteTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-                        <td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-                        <td><fmt:formatDate value="${n.updataTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                        <td><fmt:formatDate value="${n.deleteTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                        <td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                        <td><fmt:formatDate value="${n.updataTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                             <%--<td><fmt:formatDate value="${n.productTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
                             <%--<td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
                         <td class="text-right text-nowrap">

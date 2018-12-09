@@ -1,5 +1,6 @@
 package com.qin.model.simple;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Order {
@@ -37,7 +38,7 @@ public class Order {
 
     private Integer deleteTime;
 
-    private Integer createTime;
+    private Timestamp createTime;
 
     public Integer getId() {
         return id;
@@ -175,11 +176,11 @@ public class Order {
         this.deleteTime = deleteTime;
     }
 
-    public Integer getCreateTime() {
+    public Timestamp getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 }

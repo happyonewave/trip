@@ -19,7 +19,7 @@
     <result column="Email" property="email" jdbcType="VARCHAR" />
     <result column="comments" property="comments" jdbcType="INTEGER" />
     <result column="delete_time" property="deleteTime" jdbcType="INTEGER" />
-    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -89,7 +89,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from order
+    from _order
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -100,21 +100,21 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from order
+    from _order
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from order
+    delete from _order
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.qin.model.simple.OrderExample" >
-    delete from order
+    delete from _order
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.qin.model.simple.Order" >
-    insert into order (id, order_no, user_id, 
+    insert into _order (id, order_no, user_id, 
       total_price, status, date, 
       prepay_id, total_count, product_id, 
       contact_name, phone, IDCard, 
@@ -126,11 +126,11 @@
       #{prepayId,jdbcType=INTEGER}, #{totalCount,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, 
       #{contactName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, 
       #{snapImg,jdbcType=VARCHAR}, #{snapName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{comments,jdbcType=INTEGER}, #{deleteTime,jdbcType=INTEGER}, #{createTime,jdbcType=INTEGER}
+      #{comments,jdbcType=INTEGER}, #{deleteTime,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.qin.model.simple.Order" >
-    insert into order
+    insert into _order
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -240,18 +240,18 @@
         #{deleteTime,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=INTEGER},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.qin.model.simple.OrderExample" resultType="java.lang.Integer" >
-    select count(*) from order
+    select count(*) from _order
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update order
+    update _order
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
@@ -305,7 +305,7 @@
         delete_time = #{record.deleteTime,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
-        create_time = #{record.createTime,jdbcType=INTEGER},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -313,7 +313,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update order
+    update _order
     set id = #{record.id,jdbcType=INTEGER},
       order_no = #{record.orderNo,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=INTEGER},
@@ -331,13 +331,13 @@
       Email = #{record.email,jdbcType=VARCHAR},
       comments = #{record.comments,jdbcType=INTEGER},
       delete_time = #{record.deleteTime,jdbcType=INTEGER},
-      create_time = #{record.createTime,jdbcType=INTEGER}
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.qin.model.simple.Order" >
-    update order
+    update _order
     <set >
       <if test="orderNo != null" >
         order_no = #{orderNo,jdbcType=VARCHAR},
@@ -388,13 +388,13 @@
         delete_time = #{deleteTime,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qin.model.simple.Order" >
-    update order
+    update _order
     set order_no = #{orderNo,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=INTEGER},
       total_price = #{totalPrice,jdbcType=DECIMAL},
@@ -411,7 +411,7 @@
       Email = #{email,jdbcType=VARCHAR},
       comments = #{comments,jdbcType=INTEGER},
       delete_time = #{deleteTime,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=INTEGER}
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
