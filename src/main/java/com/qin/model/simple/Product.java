@@ -2,7 +2,7 @@ package com.qin.model.simple;
 
 import com.qin.model.BaseEntity;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Product implements BaseEntity {
     private Integer id;
@@ -23,7 +23,7 @@ public class Product implements BaseEntity {
 
     private String from;
 
-    private Integer theme;
+    private String theme;
 
     private String type;
 
@@ -31,11 +31,11 @@ public class Product implements BaseEntity {
 
     private Integer discount;
 
-    private Date deleteTime;
+    private Timestamp deleteTime;
 
-    private Date createTime;
+    private Timestamp createTime;
 
-    private Date updataTime;
+    private Timestamp updataTime;
 
     public Integer getId() {
         return id;
@@ -109,11 +109,11 @@ public class Product implements BaseEntity {
         this.from = from == null ? null : from.trim();
     }
 
-    public Integer getTheme() {
+    public String getTheme() {
         return theme;
     }
 
-    public void setTheme(Integer theme) {
+    public void setTheme(String theme) {
         this.theme = theme;
     }
 
@@ -141,27 +141,27 @@ public class Product implements BaseEntity {
         this.discount = discount;
     }
 
-    public Date getDeleteTime() {
+    public Timestamp getDeleteTime() {
         return deleteTime;
     }
 
-    public void setDeleteTime(Date deleteTime) {
+    public void setDeleteTime(Timestamp deleteTime) {
         this.deleteTime = deleteTime;
     }
 
-    public Date getCreateTime() {
+    public Timestamp getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 
-    public Date getUpdataTime() {
+    public Timestamp getUpdataTime() {
         return updataTime;
     }
 
-    public void setUpdataTime(Date updataTime) {
+    public void setUpdataTime(Timestamp updataTime) {
         this.updataTime = updataTime;
     }
 

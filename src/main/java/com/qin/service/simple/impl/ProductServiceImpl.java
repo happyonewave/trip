@@ -17,10 +17,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
 
-/** 
+/**
  * @Description 产品接口实现类
  */
 @Service("productService")
@@ -36,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
     public boolean addProduct(Product product) {
         if (product != null) {
 //            product.setId(Integer.parseInt(FactoryAboutKey.getPK(TableEnum.PRODUCT)) );
-            product.setCreateTime(Calendar.getInstance().getTime());
+            product.setCreateTime(new Timestamp(Calendar.getInstance().getTimeInMillis()));
             int flag = productMapper.insert(product);
             // if (StringUtils.equals(product.getTitle(), "a"))
             // throw new BusinessException("001", "测试事务回溯");
@@ -62,7 +63,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findProductById(Integer id) {
-        if (StringUtils.isBlank(id+ ""))
+        if (StringUtils.isBlank(id + ""))
             return null;
         else
             return productMapper.selectByPrimaryKey(id);
@@ -74,6 +75,11 @@ public class ProductServiceImpl implements ProductService {
         Criteria criteria = example.createCriteria();
 //        criteria.andStockEqualTo(99);
         return productMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<Product> select() {
+        return productMapper.select();
     }
 
     // 默认数据库
@@ -130,7 +136,8 @@ public class ProductServiceImpl implements ProductService {
         PageHelper.startPage(pageNum, Constants.PAGE_SIZE);
         // 紧跟着的第一个select方法会被分页
 //        List<Product> product = productMapper.findProductByPage(keywords);
-        List<Product> product = productMapper.selectByExample(new ProductExample());
+//        List<Product> product = productMapper.selectByExample(new ProductExample());
+        List<Product> product = productMapper.select();
         // 用PageInfo对结果进行包装
         PageInfo<Product> page = new PageInfo<Product>(product);
         // 测试PageInfo全部属性

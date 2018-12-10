@@ -2,10 +2,11 @@ package com.qin.mapper.simple;
 
 import com.qin.model.simple.ThemeProductExample;
 import com.qin.model.simple.ThemeProductKey;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
+@Mapper
 public interface ThemeProductMapper {
     int countByExample(ThemeProductExample example);
 

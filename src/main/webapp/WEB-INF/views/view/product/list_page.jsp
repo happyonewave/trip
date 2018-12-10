@@ -24,22 +24,21 @@
                 <%--delete_time--%>
                 <%--create_time--%>
                 <%--updata_time--%>
-                <th>id</th>
-                <th>名称</th>
+                <th>产品号</th>
+                <th>产品名</th>
                 <th>价格</th>
                 <th>库存</th>
                 <th>主图</th>
                 <th>简介</th>
-                <th>图片id</th>
+                <%--<th>图片id</th>--%>
                 <th>介绍</th>
-                <th>来自</th>
-                <th>主题</th>
-                <th>类型</th>
-                <th>城市</th>
-                <th>折扣</th>
-                <th>delete_time</th>
-                <th>create_time</th>
-                <th>updata_time</th>
+                <%--<th>来自</th>--%>
+                <th>分类</th>
+                <th>旅游方式</th>
+                <th>开始地点</th>
+                <th>优惠金额</th>
+                <th>上一次修改时间</th>
+                <th>上架时间</th>
 
                 <th class="text-right">操作</th>
             </tr>
@@ -56,18 +55,18 @@
                         <td>${n.name}</td>
                         <td>${n.price}</td>
                         <td>${n.stock}</td>
-                        <td>${n.mainImgUrl}</td>
+                        <td><img src="http://noone.top/images/${n.mainImgUrl}" height="30%"/></td>
                         <td>${n.summary}</td>
-                        <td>${n.imgId}</td>
+                            <%--<td>${n.imgId}</td>--%>
                         <td>${n.introduction}</td>
-                        <td>${n.from}</td>
+                            <%--<td>${n.from}</td>--%>
                         <td>${n.theme}</td>
                         <td>${n.type}</td>
                         <td>${n.city}</td>
                         <td>${n.discount}</td>
-                        <td><fmt:formatDate value="${n.deleteTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-                        <td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                            <%--<td><fmt:formatDate value="${n.deleteTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>--%>
                         <td><fmt:formatDate value="${n.updataTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                        <td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                             <%--<td><fmt:formatDate value="${n.productTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
                             <%--<td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
                         <td class="text-right text-nowrap">

@@ -16,6 +16,8 @@ public interface ProductService {
 
     List<Product> selectByExample(ProductExample example);
 
+    List<Product> select();
+
     public List<Product> findProductByKeywords(String keywords);
 
     public PageInfo<Product> findProductByPage(Integer pageNum, String keywords);

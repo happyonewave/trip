@@ -34,4 +34,6 @@ public interface ProductMapper {
     List<Product> findProductByKeywords(String keywords);
 
     List<Product> findProductByPage(String keywords);
+
+    List<Product> select();
 }

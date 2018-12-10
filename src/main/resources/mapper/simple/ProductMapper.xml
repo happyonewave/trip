@@ -1,117 +1,154 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.qin.mapper.simple.ProductMapper" >
-  <resultMap id="BaseResultMap" type="com.qin.model.simple.Product" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="price" property="price" jdbcType="REAL" />
-    <result column="stock" property="stock" jdbcType="INTEGER" />
-    <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR" />
-    <result column="summary" property="summary" jdbcType="VARCHAR" />
-    <result column="img_id" property="imgId" jdbcType="INTEGER" />
-    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
-    <result column="`from`" property="from" jdbcType="VARCHAR" />
-    <result column="theme" property="theme" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="city" property="city" jdbcType="VARCHAR" />
-    <result column="discount" property="discount" jdbcType="INTEGER" />
-    <result column="delete_time" property="deleteTime" jdbcType="DATE" />
-    <result column="create_time" property="createTime" jdbcType="DATE" />
-    <result column="updata_time" property="updataTime" jdbcType="DATE" />
-  </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+<mapper namespace="com.qin.mapper.simple.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.qin.model.simple.Product">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="REAL"/>
+        <result column="stock" property="stock" jdbcType="INTEGER"/>
+        <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
+        <result column="summary" property="summary" jdbcType="VARCHAR"/>
+        <result column="img_id" property="imgId" jdbcType="INTEGER"/>
+        <result column="introduction" property="introduction" jdbcType="VARCHAR"/>
+        <result column="`from`" property="from" jdbcType="VARCHAR"/>
+        <result column="theme" property="theme" jdbcType="INTEGER"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="city" property="city" jdbcType="VARCHAR"/>
+        <result column="discount" property="discount" jdbcType="INTEGER"/>
+        <result column="delete_time" property="deleteTime" jdbcType="TIMESTAMP"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List" >
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
     id, name, price, stock, main_img_url, summary, img_id, introduction, `from`, theme,
     type, city, discount, delete_time, create_time, updata_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qin.model.simple.ProductExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from product
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select
-    <include refid="Base_Column_List" />
-    from product
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qin.model.simple.ProductExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from product
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+
+
+    <sql id="Select_Column_List">
+    p.id, p.name, p.price, p.stock, p.main_img_url, p.summary, p.img_id, p.introduction, p.`from`, p.theme,
+    p.type, p.city, p.discount, p.delete_time, p.create_time, p.updata_time
+  </sql>
+
+    <select id="select" resultMap="SelectResultMap">
+        select
+        <include refid="Select_Column_List"/>
+        ,t.name theme_name
+        from product p,theme t,Theme_product tp
+        <where>p.id = tp.product_id and t.id = tp.theme_id</where>
+        order by create_time desc
+    </select>
+    <resultMap id="SelectResultMap" type="com.qin.model.simple.Product">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="REAL"/>
+        <result column="stock" property="stock" jdbcType="INTEGER"/>
+        <result column="main_img_url" property="mainImgUrl" jdbcType="VARCHAR"/>
+        <result column="summary" property="summary" jdbcType="VARCHAR"/>
+        <result column="img_id" property="imgId" jdbcType="INTEGER"/>
+        <result column="introduction" property="introduction" jdbcType="VARCHAR"/>
+        <result column="`from`" property="from" jdbcType="VARCHAR"/>
+        <result column="theme_name" property="theme" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="city" property="city" jdbcType="VARCHAR"/>
+        <result column="discount" property="discount" jdbcType="INTEGER"/>
+        <result column="delete_time" property="deleteTime" jdbcType="TIMESTAMP"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="updata_time" property="updataTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from product
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from product
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.qin.model.simple.ProductExample" >
-    delete from product
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.qin.model.simple.Product" >
+    <delete id="deleteByExample" parameterType="com.qin.model.simple.ProductExample">
+        delete from product
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.qin.model.simple.Product">
     insert into product ( name, price,
       stock, main_img_url, summary,
       img_id, introduction, `from`,
@@ -122,248 +159,248 @@
       #{stock,jdbcType=INTEGER}, #{mainImgUrl,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR},
       #{imgId,jdbcType=INTEGER}, #{introduction,jdbcType=VARCHAR}, #{from,jdbcType=VARCHAR},
       #{theme,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR},
-      #{discount,jdbcType=INTEGER}, #{deleteTime,jdbcType=DATE}, #{createTime,jdbcType=DATE},
-      #{updataTime,jdbcType=DATE})
+      #{discount,jdbcType=INTEGER}, #{deleteTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP},
+      #{updataTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.qin.model.simple.Product" >
-    insert into product
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="price != null" >
-        price,
-      </if>
-      <if test="stock != null" >
-        stock,
-      </if>
-      <if test="mainImgUrl != null" >
-        main_img_url,
-      </if>
-      <if test="summary != null" >
-        summary,
-      </if>
-      <if test="imgId != null" >
-        img_id,
-      </if>
-      <if test="introduction != null" >
-        introduction,
-      </if>
-      <if test="from != null" >
-        `from`,
-      </if>
-      <if test="theme != null" >
-        theme,
-      </if>
-      <if test="type != null" >
-        type,
-      </if>
-      <if test="city != null" >
-        city,
-      </if>
-      <if test="discount != null" >
-        discount,
-      </if>
-      <if test="deleteTime != null" >
-        delete_time,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
-      <if test="updataTime != null" >
-        updata_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null" >
-        #{price,jdbcType=REAL},
-      </if>
-      <if test="stock != null" >
-        #{stock,jdbcType=INTEGER},
-      </if>
-      <if test="mainImgUrl != null" >
-        #{mainImgUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="summary != null" >
-        #{summary,jdbcType=VARCHAR},
-      </if>
-      <if test="imgId != null" >
-        #{imgId,jdbcType=INTEGER},
-      </if>
-      <if test="introduction != null" >
-        #{introduction,jdbcType=VARCHAR},
-      </if>
-      <if test="from != null" >
-        #{from,jdbcType=VARCHAR},
-      </if>
-      <if test="theme != null" >
-        #{theme,jdbcType=INTEGER},
-      </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="city != null" >
-        #{city,jdbcType=VARCHAR},
-      </if>
-      <if test="discount != null" >
-        #{discount,jdbcType=INTEGER},
-      </if>
-      <if test="deleteTime != null" >
-        #{deleteTime,jdbcType=DATE},
-      </if>
-      <if test="createTime != null" >
-        #{createTime,jdbcType=DATE},
-      </if>
-      <if test="updataTime != null" >
-        #{updataTime,jdbcType=DATE},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.qin.model.simple.ProductExample" resultType="java.lang.Integer" >
-    select count(*) from product
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
-    update product
-    <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=INTEGER},
-      </if>
-      <if test="record.name != null" >
+    <insert id="insertSelective" parameterType="com.qin.model.simple.Product">
+        insert into product
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="stock != null">
+                stock,
+            </if>
+            <if test="mainImgUrl != null">
+                main_img_url,
+            </if>
+            <if test="summary != null">
+                summary,
+            </if>
+            <if test="imgId != null">
+                img_id,
+            </if>
+            <if test="introduction != null">
+                introduction,
+            </if>
+            <if test="from != null">
+                `from`,
+            </if>
+            <if test="theme != null">
+                theme,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="city != null">
+                city,
+            </if>
+            <if test="discount != null">
+                discount,
+            </if>
+            <if test="deleteTime != null">
+                delete_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updataTime != null">
+                updata_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=REAL},
+            </if>
+            <if test="stock != null">
+                #{stock,jdbcType=INTEGER},
+            </if>
+            <if test="mainImgUrl != null">
+                #{mainImgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="summary != null">
+                #{summary,jdbcType=VARCHAR},
+            </if>
+            <if test="imgId != null">
+                #{imgId,jdbcType=INTEGER},
+            </if>
+            <if test="introduction != null">
+                #{introduction,jdbcType=VARCHAR},
+            </if>
+            <if test="from != null">
+                #{from,jdbcType=VARCHAR},
+            </if>
+            <if test="theme != null">
+                #{theme,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="discount != null">
+                #{discount,jdbcType=INTEGER},
+            </if>
+            <if test="deleteTime != null">
+                #{deleteTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updataTime != null">
+                #{updataTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.qin.model.simple.ProductExample" resultType="java.lang.Integer">
+        select count(*) from product
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update product
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.name != null">
+                name = #{record.name,jdbcType=VARCHAR},
+            </if>
+            <if test="record.price != null">
+                price = #{record.price,jdbcType=REAL},
+            </if>
+            <if test="record.stock != null">
+                stock = #{record.stock,jdbcType=INTEGER},
+            </if>
+            <if test="record.mainImgUrl != null">
+                main_img_url = #{record.mainImgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="record.summary != null">
+                summary = #{record.summary,jdbcType=VARCHAR},
+            </if>
+            <if test="record.imgId != null">
+                img_id = #{record.imgId,jdbcType=INTEGER},
+            </if>
+            <if test="record.introduction != null">
+                introduction = #{record.introduction,jdbcType=VARCHAR},
+            </if>
+            <if test="record.from != null">
+                `from` = #{record.from,jdbcType=VARCHAR},
+            </if>
+            <if test="record.theme != null">
+                theme = #{record.theme,jdbcType=INTEGER},
+            </if>
+            <if test="record.type != null">
+                type = #{record.type,jdbcType=VARCHAR},
+            </if>
+            <if test="record.city != null">
+                city = #{record.city,jdbcType=VARCHAR},
+            </if>
+            <if test="record.discount != null">
+                discount = #{record.discount,jdbcType=INTEGER},
+            </if>
+            <if test="record.deleteTime != null">
+                delete_time = #{record.deleteTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.createTime != null">
+                create_time = #{record.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.updataTime != null">
+                updata_time = #{record.updataTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update product
+        set id = #{record.id,jdbcType=INTEGER},
         name = #{record.name,jdbcType=VARCHAR},
-      </if>
-      <if test="record.price != null" >
         price = #{record.price,jdbcType=REAL},
-      </if>
-      <if test="record.stock != null" >
         stock = #{record.stock,jdbcType=INTEGER},
-      </if>
-      <if test="record.mainImgUrl != null" >
         main_img_url = #{record.mainImgUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="record.summary != null" >
         summary = #{record.summary,jdbcType=VARCHAR},
-      </if>
-      <if test="record.imgId != null" >
         img_id = #{record.imgId,jdbcType=INTEGER},
-      </if>
-      <if test="record.introduction != null" >
         introduction = #{record.introduction,jdbcType=VARCHAR},
-      </if>
-      <if test="record.from != null" >
         `from` = #{record.from,jdbcType=VARCHAR},
-      </if>
-      <if test="record.theme != null" >
         theme = #{record.theme,jdbcType=INTEGER},
-      </if>
-      <if test="record.type != null" >
         type = #{record.type,jdbcType=VARCHAR},
-      </if>
-      <if test="record.city != null" >
         city = #{record.city,jdbcType=VARCHAR},
-      </if>
-      <if test="record.discount != null" >
         discount = #{record.discount,jdbcType=INTEGER},
-      </if>
-      <if test="record.deleteTime != null" >
-        delete_time = #{record.deleteTime,jdbcType=DATE},
-      </if>
-      <if test="record.createTime != null" >
-        create_time = #{record.createTime,jdbcType=DATE},
-      </if>
-      <if test="record.updataTime != null" >
-        updata_time = #{record.updataTime,jdbcType=DATE},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update product
-    set id = #{record.id,jdbcType=INTEGER},
-      name = #{record.name,jdbcType=VARCHAR},
-      price = #{record.price,jdbcType=REAL},
-      stock = #{record.stock,jdbcType=INTEGER},
-      main_img_url = #{record.mainImgUrl,jdbcType=VARCHAR},
-      summary = #{record.summary,jdbcType=VARCHAR},
-      img_id = #{record.imgId,jdbcType=INTEGER},
-      introduction = #{record.introduction,jdbcType=VARCHAR},
-      `from` = #{record.from,jdbcType=VARCHAR},
-      theme = #{record.theme,jdbcType=INTEGER},
-      type = #{record.type,jdbcType=VARCHAR},
-      city = #{record.city,jdbcType=VARCHAR},
-      discount = #{record.discount,jdbcType=INTEGER},
-      delete_time = #{record.deleteTime,jdbcType=DATE},
-      create_time = #{record.createTime,jdbcType=DATE},
-      updata_time = #{record.updataTime,jdbcType=DATE}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qin.model.simple.Product" >
-    update product
-    <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null" >
-        price = #{price,jdbcType=REAL},
-      </if>
-      <if test="stock != null" >
-        stock = #{stock,jdbcType=INTEGER},
-      </if>
-      <if test="mainImgUrl != null" >
-        main_img_url = #{mainImgUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="summary != null" >
-        summary = #{summary,jdbcType=VARCHAR},
-      </if>
-      <if test="imgId != null" >
-        img_id = #{imgId,jdbcType=INTEGER},
-      </if>
-      <if test="introduction != null" >
-        introduction = #{introduction,jdbcType=VARCHAR},
-      </if>
-      <if test="from != null" >
-        `from` = #{from,jdbcType=VARCHAR},
-      </if>
-      <if test="theme != null" >
-        theme = #{theme,jdbcType=INTEGER},
-      </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="city != null" >
-        city = #{city,jdbcType=VARCHAR},
-      </if>
-      <if test="discount != null" >
-        discount = #{discount,jdbcType=INTEGER},
-      </if>
-      <if test="deleteTime != null" >
-        delete_time = #{deleteTime,jdbcType=DATE},
-      </if>
-      <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=DATE},
-      </if>
-      <if test="updataTime != null" >
-        updata_time = #{updataTime,jdbcType=DATE},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.qin.model.simple.Product" >
+        delete_time = #{record.deleteTime,jdbcType=TIMESTAMP},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+        updata_time = #{record.updataTime,jdbcType=TIMESTAMP}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qin.model.simple.Product">
+        update product
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=REAL},
+            </if>
+            <if test="stock != null">
+                stock = #{stock,jdbcType=INTEGER},
+            </if>
+            <if test="mainImgUrl != null">
+                main_img_url = #{mainImgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="summary != null">
+                summary = #{summary,jdbcType=VARCHAR},
+            </if>
+            <if test="imgId != null">
+                img_id = #{imgId,jdbcType=INTEGER},
+            </if>
+            <if test="introduction != null">
+                introduction = #{introduction,jdbcType=VARCHAR},
+            </if>
+            <if test="from != null">
+                `from` = #{from,jdbcType=VARCHAR},
+            </if>
+            <if test="theme != null">
+                theme = #{theme,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                city = #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="discount != null">
+                discount = #{discount,jdbcType=INTEGER},
+            </if>
+            <if test="deleteTime != null">
+                delete_time = #{deleteTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updataTime != null">
+                updata_time = #{updataTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qin.model.simple.Product">
     update product
     set name = #{name,jdbcType=VARCHAR},
       price = #{price,jdbcType=REAL},
@@ -377,9 +414,9 @@
       type = #{type,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
       discount = #{discount,jdbcType=INTEGER},
-      delete_time = #{deleteTime,jdbcType=DATE},
-      create_time = #{createTime,jdbcType=DATE},
-      updata_time = #{updataTime,jdbcType=DATE}
+      delete_time = #{deleteTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      updata_time = #{updataTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
