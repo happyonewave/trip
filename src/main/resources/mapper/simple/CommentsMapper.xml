@@ -8,9 +8,9 @@
     <result column="time" property="time" jdbcType="DATE" />
     <result column="order_id" property="orderId" jdbcType="INTEGER" />
     <result column="grade" property="grade" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="INTEGER" />
-    <result column="delete_time" property="deleteTime" jdbcType="INTEGER" />
-    <result column="update_time" property="updateTime" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="delete_time" property="deleteTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.qin.model.simple.Comments" extends="BaseResultMap" >
     <result column="text" property="text" jdbcType="LONGVARCHAR" />
@@ -110,7 +110,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -128,13 +128,13 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.qin.model.simple.Comments" >
-    insert into comments (id, user_name, product_id, 
-      time, order_id, grade, 
-      create_time, delete_time, update_time, 
+    insert into comments (id, user_name, product_id,
+      time, order_id, grade,
+      create_time, delete_time, update_time,
       text)
-    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{productId,jdbcType=INTEGER}, 
-      #{time,jdbcType=DATE}, #{orderId,jdbcType=INTEGER}, #{grade,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=INTEGER}, #{deleteTime,jdbcType=INTEGER}, #{updateTime,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{productId,jdbcType=INTEGER},
+      #{time,jdbcType=DATE}, #{orderId,jdbcType=INTEGER}, #{grade,jdbcType=VARCHAR},
+      #{createTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
       #{text,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qin.model.simple.Comments" >
@@ -191,13 +191,13 @@
         #{grade,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=INTEGER},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="deleteTime != null" >
-        #{deleteTime,jdbcType=INTEGER},
+        #{deleteTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=INTEGER},
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="text != null" >
         #{text,jdbcType=LONGVARCHAR},
@@ -232,13 +232,13 @@
         grade = #{record.grade,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null" >
-        create_time = #{record.createTime,jdbcType=INTEGER},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.deleteTime != null" >
-        delete_time = #{record.deleteTime,jdbcType=INTEGER},
+        delete_time = #{record.deleteTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.updateTime != null" >
-        update_time = #{record.updateTime,jdbcType=INTEGER},
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.text != null" >
         text = #{record.text,jdbcType=LONGVARCHAR},
@@ -256,9 +256,9 @@
       time = #{record.time,jdbcType=DATE},
       order_id = #{record.orderId,jdbcType=INTEGER},
       grade = #{record.grade,jdbcType=VARCHAR},
-      create_time = #{record.createTime,jdbcType=INTEGER},
-      delete_time = #{record.deleteTime,jdbcType=INTEGER},
-      update_time = #{record.updateTime,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      delete_time = #{record.deleteTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       text = #{record.text,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -272,9 +272,9 @@
       time = #{record.time,jdbcType=DATE},
       order_id = #{record.orderId,jdbcType=INTEGER},
       grade = #{record.grade,jdbcType=VARCHAR},
-      create_time = #{record.createTime,jdbcType=INTEGER},
-      delete_time = #{record.deleteTime,jdbcType=INTEGER},
-      update_time = #{record.updateTime,jdbcType=INTEGER}
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      delete_time = #{record.deleteTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -298,13 +298,13 @@
         grade = #{grade,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="deleteTime != null" >
-        delete_time = #{deleteTime,jdbcType=INTEGER},
+        delete_time = #{deleteTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=INTEGER},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="text != null" >
         text = #{text,jdbcType=LONGVARCHAR},
@@ -319,9 +319,9 @@
       time = #{time,jdbcType=DATE},
       order_id = #{orderId,jdbcType=INTEGER},
       grade = #{grade,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=INTEGER},
-      delete_time = #{deleteTime,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      delete_time = #{deleteTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
       text = #{text,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -332,9 +332,9 @@
       time = #{time,jdbcType=DATE},
       order_id = #{orderId,jdbcType=INTEGER},
       grade = #{grade,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=INTEGER},
-      delete_time = #{deleteTime,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=INTEGER}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      delete_time = #{deleteTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

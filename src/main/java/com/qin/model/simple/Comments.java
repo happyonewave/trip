@@ -1,5 +1,6 @@
 package com.qin.model.simple;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Comments {
@@ -15,11 +16,11 @@ public class Comments {
 
     private String grade;
 
-    private Integer createTime;
+    private Timestamp createTime;
 
-    private Integer deleteTime;
+    private Timestamp deleteTime;
 
-    private Integer updateTime;
+    private Timestamp updateTime;
 
     private String text;
 
@@ -71,27 +72,27 @@ public class Comments {
         this.grade = grade == null ? null : grade.trim();
     }
 
-    public Integer getCreateTime() {
+    public Timestamp getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 
-    public Integer getDeleteTime() {
+    public Timestamp getDeleteTime() {
         return deleteTime;
     }
 
-    public void setDeleteTime(Integer deleteTime) {
+    public void setDeleteTime(Timestamp deleteTime) {
         this.deleteTime = deleteTime;
     }
 
-    public Integer getUpdateTime() {
+    public Timestamp getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
 
