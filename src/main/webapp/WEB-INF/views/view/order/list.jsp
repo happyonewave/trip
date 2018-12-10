@@ -92,7 +92,7 @@
 					<h4 class="modal-title">编辑重新发布新闻</h4>
 				</div>
 				<div class="modal-body">
-					<form role="form" id="orderForm" name="orderForm" class="form-horizontal"></form>
+					<%--<form role="form" id="orderForm" name="orderForm" class="form-horizontal"></form>--%>
 				</div>
 			</div>
 		</div>
@@ -130,10 +130,33 @@
       $("#orderForm").validate({
         //debug: true,
         submitHandler: function(form) {
-          editForm(form);
+            editForm(form);
         }
       });
+        $(".handle").each(function(index,obj){
+            $(this).click(function(){
+                console.log("click");
+                toastr.success('', "click");
+                var id = $(this).data("id");
+                var status = $(this).data("status");
+                var order = {id:id,status:status};
+                toastr.success('', JSON.stringify(order));
 
+
+                var form = $("<form role=\"form\" id=\"orderForm\" name=\"orderForm\" class=\"form-horizontal\"></form>");
+                id_input = $("<input  type='text' type='hidden' name='id' />");
+                id_input.attr('value',id);
+                status_input = $("<input  type='text' type='hidden' name='status' />");
+                status_input.attr('value',status);
+                form.append(id_input);
+                form.append(status_input);
+                form.appendTo("body");
+                form.css('display','none');
+                // form.submit();
+
+                editForm(form);
+            });
+		});
       //查询新闻
       $("#queryNewsBtn").click(function() {
         list_page();
@@ -146,14 +169,18 @@
       }
 
       function editForm(form) {
+
+          console.log($(form).serialize());
         $.ajax({
           url: _ctx + "/order/edit",
           type: "post",
           data: $(form).serialize(),
           success: function(data) {
             if (data.status == '1') {
-              list_page();//保存成功，刷新数据
+              // list_page();//保存成功，刷新数据
+                window.location.reload()//保存成功，刷新数据
               toastr.success('', data.msg);
+                // $("#orderForm").remove();
               $('#edit').modal('hide');//关闭编辑窗口
             } else
               toastr.error('', data.msg);

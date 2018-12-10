@@ -68,6 +68,13 @@
                         <td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                         <td class="text-right text-nowrap">
                             <div class="btn-group ">
+                                <button class="btn btn-white btn-sm handle" <c:if test="${n.status == 2||n.status == 6}">disabled ="disabled"</c:if> data-id="${n.id }" data-status="<c:choose><c:when test="${n.status == 1}">2</c:when><c:otherwise>6</c:otherwise></c:choose>">
+                                    <i class="fa fa-pencil"></i> <c:choose><c:when test="${n.status == 1}">确认</c:when><c:when test="${n.status == 2}">已成功 无法操作</c:when><c:when test="${n.status == 6}">已失败 无法操作</c:when><c:otherwise>拒绝</c:otherwise></c:choose>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="text-right text-nowrap">
+                            <div class="btn-group ">
                                 <button class="btn btn-white btn-sm edit" data-id="${n.id }" data-toggle="modal"
                                         data-target="#edit">
                                     <i class="fa fa-pencil"></i> 编辑

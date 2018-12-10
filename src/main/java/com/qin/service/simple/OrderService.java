@@ -11,6 +11,7 @@ public interface OrderService {
     public boolean addOrder(Order order);
 
     public boolean editOrder(Order order);
+    public boolean editStatus(Integer orderId,Integer status);
 
     public Order findOrderById(Integer orderId);
 

@@ -106,6 +106,54 @@ public class OrderController {
         return result;
     }
 
+    /**
+     * @Description ajax保存更新重新发布订单
+     *
+     * @param order
+     * @return
+     */
+    @RequestMapping(value = "/order/edit1", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, String> edit1( @RequestBody Order order) {
+        log.info(order.toString());
+        boolean flag = orderService.editOrder(order);
+        Map<String, String> result = new HashMap<>();
+        if (flag) {
+            result.put("status", "1");
+            result.put("msg", "发布成功");
+        } else {
+            result.put("status", "0");
+            result.put("msg", "发布失败");
+        }
+        return result;
+    }
+
+    /**
+     * @Description ajax处理订单（接受或拒绝）
+     *
+     * @param order
+     * @return
+     */
+    @RequestMapping(value = "/order/handle/{id}/{staus}", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, String> handle(@PathVariable Integer id,@PathVariable Integer staus) {
+        Order order = new Order();
+        order.setId(id);
+        order.setStatus(staus);
+        boolean flag = orderService.editOrder(order);
+        Map<String, String> result = new HashMap<>();
+        if (flag) {
+            result.put("status", "1");
+            result.put("msg", "处理成功");
+        } else {
+            result.put("status", "0");
+            result.put("msg", "处理失败");
+        }
+        return result;
+    }
+
+
+
     @RequestMapping(value = "/order/list", method = RequestMethod.GET)
     public String list(ModelMap map) {
         PageInfo<Order> page = orderService.findOrderByPage(null, null);

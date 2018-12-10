@@ -62,6 +62,22 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public boolean editStatus(Integer orderId,Integer status){
+//        if (orderId != null && StringUtils.isNotBlank(order.getId() + "")) {
+//            int flag = orderMapper.updateByPrimaryKeySelective(order);
+//            if (flag == 1)
+//                return true;
+//            else
+//                return false;
+//        } else
+//            return false;
+//
+//        Order order =  orderMapper.selectByPrimaryKey(orderId);
+//        order.setStatus(status);
+//        orderMapper.updateByPrimaryKeySelective(order);
+        return false;
+    }
+    @Override
     public Order findOrderById(Integer id) {
         if (StringUtils.isBlank(id + ""))
             return null;

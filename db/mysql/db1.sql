@@ -11,7 +11,7 @@
  Target Server Version : 100137
  File Encoding         : 65001
 
- Date: 10/12/2018 18:39:33
+ Date: 10/12/2018 23:59:07
 */
 
 SET NAMES utf8mb4;
@@ -2139,16 +2139,16 @@ CREATE TABLE `order`  (
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES (970, 'test_871', 871, 871, 3, '2018-12-09', NULL, 871, 871, 'test_name871', 'test_phone871', 'test_idcard871', 'test_img871', 'test_productname871', 'test_email871', 1, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (969, 'test_870', 870, 870, 4, '2018-12-09', NULL, 870, 870, 'test_name870', 'test_phone870', 'test_idcard870', 'test_img870', 'test_productname870', 'test_email870', 1, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (968, 'test_869', 869, 869, 1, '2018-12-09', NULL, 869, 869, 'test_name869', 'test_phone869', 'test_idcard869', 'test_img869', 'test_productname869', 'test_email869', 1, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (967, 'test_868', 868, 868, 3, '2018-12-09', NULL, 868, 868, 'test_name868', 'test_phone868', 'test_idcard868', 'test_img868', 'test_productname868', 'test_email868', 0, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (966, 'test_867', 867, 867, 5, '2018-12-09', NULL, 867, 867, 'test_name867', 'test_phone867', 'test_idcard867', 'test_img867', 'test_productname867', 'test_email867', 0, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (965, 'test_866', 866, 866, 3, '2018-12-09', NULL, 866, 866, 'test_name866', 'test_phone866', 'test_idcard866', 'test_img866', 'test_productname866', 'test_email866', 0, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (964, 'test_865', 865, 865, 2, '2018-12-09', NULL, 865, 865, 'test_name865', 'test_phone865', 'test_idcard865', 'test_img865', 'test_productname865', 'test_email865', 1, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (963, 'test_864', 864, 864, 5, '2018-12-09', NULL, 864, 864, 'test_name864', 'test_phone864', 'test_idcard864', 'test_img864', 'test_productname864', 'test_email864', 0, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (962, 'test_863', 863, 863, 6, '2018-12-09', NULL, 863, 863, 'test_name863', 'test_phone863', 'test_idcard863', 'test_img863', 'test_productname863', 'test_email863', 0, NULL, '2018-12-09 22:45:15');
-INSERT INTO `order` VALUES (961, 'test_862', 862, 862, 2, '2018-12-09', NULL, 862, 862, 'test_name862', 'test_phone862', 'test_idcard862', 'test_img862', 'test_productname862', 'test_email862', 0, NULL, '2018-12-09 22:45:15');
+INSERT INTO `order` VALUES (970, 'test_871', 871, 871, 2, '2018-12-09', NULL, 871, 871, 'test_name871', 'test_phone871', 'test_idcard871', 'test_img871', 'test_productname871', 'test_email871', 1, NULL, '2018-12-10 23:58:12');
+INSERT INTO `order` VALUES (969, 'test_870', 870, 870, 2, '2018-12-09', NULL, 870, 870, 'test_name870', 'test_phone870', 'test_idcard870', 'test_img870', 'test_productname870', 'test_email870', 1, NULL, '2018-12-10 23:32:03');
+INSERT INTO `order` VALUES (968, 'test_869', 869, 869, 4, '2018-12-09', NULL, 869, 869, 'test_name869', 'test_phone869', 'test_idcard869', 'test_img869', 'test_productname869', 'test_email869', 1, NULL, '2018-12-10 23:58:14');
+INSERT INTO `order` VALUES (967, 'test_868', 868, 868, 2, '2018-12-09', NULL, 868, 868, 'test_name868', 'test_phone868', 'test_idcard868', 'test_img868', 'test_productname868', 'test_email868', 0, NULL, '2018-12-10 23:32:07');
+INSERT INTO `order` VALUES (966, 'test_867', 867, 867, 2, '2018-12-09', NULL, 867, 867, 'test_name867', 'test_phone867', 'test_idcard867', 'test_img867', 'test_productname867', 'test_email867', 0, NULL, '2018-12-10 23:57:55');
+INSERT INTO `order` VALUES (965, 'test_866', 866, 866, 6, '2018-12-09', NULL, 866, 866, 'test_name866', 'test_phone866', 'test_idcard866', 'test_img866', 'test_productname866', 'test_email866', 0, NULL, '2018-12-10 23:27:00');
+INSERT INTO `order` VALUES (964, 'test_865', 865, 865, 3, '2018-12-09', NULL, 865, 865, 'test_name865', 'test_phone865', 'test_idcard865', 'test_img865', 'test_productname865', 'test_email865', 1, NULL, '2018-12-10 23:58:22');
+INSERT INTO `order` VALUES (963, 'test_864', 864, 864, 1, '2018-12-09', NULL, 864, 864, 'test_name864', 'test_phone864', 'test_idcard864', 'test_img864', 'test_productname864', 'test_email864', 0, NULL, '2018-12-10 23:58:24');
+INSERT INTO `order` VALUES (962, 'test_863', 863, 863, 4, '2018-12-09', NULL, 863, 863, 'test_name863', 'test_phone863', 'test_idcard863', 'test_img863', 'test_productname863', 'test_email863', 0, NULL, '2018-12-10 23:58:27');
+INSERT INTO `order` VALUES (961, 'test_862', 862, 862, 6, '2018-12-09', NULL, 862, 862, 'test_name862', 'test_phone862', 'test_idcard862', 'test_img862', 'test_productname862', 'test_email862', 0, NULL, '2018-12-10 23:09:22');
 INSERT INTO `order` VALUES (960, 'test_861', 861, 861, 6, '2018-12-09', NULL, 861, 861, 'test_name861', 'test_phone861', 'test_idcard861', 'test_img861', 'test_productname861', 'test_email861', 1, NULL, '2018-12-09 22:45:15');
 INSERT INTO `order` VALUES (959, 'test_860', 860, 860, 2, '2018-12-09', NULL, 860, 860, 'test_name860', 'test_phone860', 'test_idcard860', 'test_img860', 'test_productname860', 'test_email860', 1, NULL, '2018-12-09 22:45:15');
 INSERT INTO `order` VALUES (958, 'test_859', 859, 859, 2, '2018-12-09', NULL, 859, 859, 'test_name859', 'test_phone859', 'test_idcard859', 'test_img859', 'test_productname859', 'test_email859', 1, NULL, '2018-12-09 22:45:15');
@@ -7284,12 +7284,6 @@ CREATE TABLE `t_sys_permission`  (
 -- Records of t_sys_permission
 -- ----------------------------
 INSERT INTO `t_sys_permission` VALUES ('1', '订单管理', '', NULL, 'ddgl', NULL, 1, 1, 310);
-INSERT INTO `t_sys_permission` VALUES ('13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `t_sys_permission` VALUES ('14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `t_sys_permission` VALUES ('15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `t_sys_permission` VALUES ('16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `t_sys_permission` VALUES ('17', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `t_sys_permission` VALUES ('18', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `t_sys_permission` VALUES ('182834649146601472', '管理首页', 'fa-home', 'index', 'glsy', NULL, 1, 1, 1);
 INSERT INTO `t_sys_permission` VALUES ('182834649318567931', '产品管理', '', NULL, 'cpgl', NULL, 1, 1, 300);
 INSERT INTO `t_sys_permission` VALUES ('182834649318567936', '站内新闻', '', NULL, 'znxy', NULL, 1, 1, 10);
@@ -7450,9 +7444,7 @@ INSERT INTO `t_sys_permission` VALUES ('182834653831639040', '经纪服务专员
 INSERT INTO `t_sys_permission` VALUES ('182834653856804864', '经纪公司维护', NULL, 'view/firm/list2', 'jjfwzycs_jjgswh', 'jjfwzycs', 1, 2, 281);
 INSERT INTO `t_sys_permission` VALUES ('182834653881970688', '客服专员', 'fa-sitemap', NULL, 'kfzy', NULL, 1, 1, 290);
 INSERT INTO `t_sys_permission` VALUES ('182834653911330816', '客户意向审核', 'fa-sitemap', 'view/custintent/custSupport', 'kfzy_khyxsh', 'kfzy', 1, 2, 291);
-INSERT INTO `t_sys_permission` VALUES ('19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `t_sys_permission` VALUES ('2', '新增订单', '', 'order/add', 'ddgl_czcp', 'ddgl', 1, 2, 311);
-INSERT INTO `t_sys_permission` VALUES ('20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `t_sys_permission` VALUES ('3', '订单列表', '', 'order/list', 'ddgl_cplb', 'ddgl', 1, 2, 312);
 INSERT INTO `t_sys_permission` VALUES ('4', '默认数据库', '', 'order/list', 'ddgl_mrsjk', 'ddgl', 1, 2, 313);
 INSERT INTO `t_sys_permission` VALUES ('5', '数据库1', '', 'order/list1', 'ddgl_sjk1', 'ddgl', 1, 2, 314);
@@ -7491,6 +7483,10 @@ CREATE TABLE `t_sys_role_permission`  (
 -- ----------------------------
 -- Records of t_sys_role_permission
 -- ----------------------------
+INSERT INTO `t_sys_role_permission` VALUES ('1', '1', '182834649041743872');
+INSERT INTO `t_sys_role_permission` VALUES ('10', '5', '182834649100464128');
+INSERT INTO `t_sys_role_permission` VALUES ('11', '6', '182834649041743872');
+INSERT INTO `t_sys_role_permission` VALUES ('12', '6', '182834649100464128');
 INSERT INTO `t_sys_role_permission` VALUES ('14', '7', '182834649041743872');
 INSERT INTO `t_sys_role_permission` VALUES ('15', '7', '182834649100464128');
 INSERT INTO `t_sys_role_permission` VALUES ('182834654204932096', '182834649146601472', '182834649041743872');
@@ -7813,6 +7809,14 @@ INSERT INTO `t_sys_role_permission` VALUES ('182834669065351168', '1828346538819
 INSERT INTO `t_sys_role_permission` VALUES ('182834669103099904', '182834653881970688', '182834649100464128');
 INSERT INTO `t_sys_role_permission` VALUES ('182834669145042944', '182834653911330816', '182834649041743872');
 INSERT INTO `t_sys_role_permission` VALUES ('182834669195374592', '182834653911330816', '182834649100464128');
+INSERT INTO `t_sys_role_permission` VALUES ('2', '1', '182834649100464128');
+INSERT INTO `t_sys_role_permission` VALUES ('3', '2', '182834649041743872');
+INSERT INTO `t_sys_role_permission` VALUES ('4', '2', '182834649100464128');
+INSERT INTO `t_sys_role_permission` VALUES ('5', '3', '182834649041743872');
+INSERT INTO `t_sys_role_permission` VALUES ('6', '3', '182834649100464128');
+INSERT INTO `t_sys_role_permission` VALUES ('7', '4', '182834649041743872');
+INSERT INTO `t_sys_role_permission` VALUES ('8', '4', '182834649100464128');
+INSERT INTO `t_sys_role_permission` VALUES ('9', '5', '182834649041743872');
 
 -- ----------------------------
 -- Table structure for t_sys_user
