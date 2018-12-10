@@ -89,7 +89,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from _order
+    from `order`
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -100,21 +100,21 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from _order
+    from `order`
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from _order
+    delete from `order`
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.qin.model.simple.OrderExample" >
-    delete from _order
+    delete from `order`
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.qin.model.simple.Order" >
-    insert into _order (id, order_no, user_id, 
+    insert into `order` (id, order_no, user_id, 
       total_price, status, date, 
       prepay_id, total_count, product_id, 
       contact_name, phone, IDCard, 
@@ -130,7 +130,7 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="com.qin.model.simple.Order" >
-    insert into _order
+    insert into `order`
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -245,13 +245,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.qin.model.simple.OrderExample" resultType="java.lang.Integer" >
-    select count(*) from _order
+    select count(*) from `order`
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update _order
+    update `order`
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
@@ -313,7 +313,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update _order
+    update `order`
     set id = #{record.id,jdbcType=INTEGER},
       order_no = #{record.orderNo,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=INTEGER},
@@ -337,7 +337,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.qin.model.simple.Order" >
-    update _order
+    update `order`
     <set >
       <if test="orderNo != null" >
         order_no = #{orderNo,jdbcType=VARCHAR},
@@ -394,7 +394,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qin.model.simple.Order" >
-    update _order
+    update `order`
     set order_no = #{orderNo,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=INTEGER},
       total_price = #{totalPrice,jdbcType=DECIMAL},
