@@ -152,17 +152,17 @@
     insert into product ( name, price,
       stock, main_img_url, summary,
       img_id, introduction, `from`,
-      theme, type, city,
+      type, city,
       discount, delete_time, create_time,
       updata_time)
     values (#{name,jdbcType=VARCHAR}, #{price,jdbcType=REAL},
       #{stock,jdbcType=INTEGER}, #{mainImgUrl,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR},
       #{imgId,jdbcType=INTEGER}, #{introduction,jdbcType=VARCHAR}, #{from,jdbcType=VARCHAR},
-      #{theme,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR},
-      #{discount,jdbcType=INTEGER}, #{deleteTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP},
+      #{type,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{discount,jdbcType=INTEGER},
+      #{deleteTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP},
       #{updataTime,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" parameterType="com.qin.model.simple.Product">
+    <insert id="insertSelective" parameterType="com.qin.model.simple.Product" useGeneratedKeys="true" keyProperty="id">
         insert into product
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -192,9 +192,9 @@
             <if test="from != null">
                 `from`,
             </if>
-            <if test="theme != null">
-                theme,
-            </if>
+            <!--<if test="theme != null">-->
+                <!--theme,-->
+            <!--</if>-->
             <if test="type != null">
                 type,
             </if>
@@ -242,9 +242,9 @@
             <if test="from != null">
                 #{from,jdbcType=VARCHAR},
             </if>
-            <if test="theme != null">
-                #{theme,jdbcType=INTEGER},
-            </if>
+            <!--<if test="theme != null">-->
+                <!--#{theme,jdbcType=INTEGER},-->
+            <!--</if>-->
             <if test="type != null">
                 #{type,jdbcType=VARCHAR},
             </if>

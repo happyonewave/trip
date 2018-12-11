@@ -43,8 +43,8 @@
 					<h2>电商管理</h2>
 					<ol class="breadcrumb">
 						<li><a href="index.html">管理首页</a></li>
-						<li>站内新闻</li>
-						<li class="active">发布新闻</li>
+						<li>站内产品</li>
+						<li class="active">上架产品</li>
 					</ol>
 				</div>
 			</div>
@@ -56,30 +56,78 @@
 						<form name="entity" id="input_form" class="form-horizontal">
 
 							<div class="form-group">
-								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="title"><span class="text-danger">* </span>标题</label>
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="name"><span class="text-danger">* </span>产品名</label>
 								<div class="col-sm-12 col-md-7 col-lg-9">
-									<input type="text" id="title" name="title" value="" placeholder="请输入标题" class="form-control" required>
+									<input type="text" id="name" name="name" value="" placeholder="请输入产品名" class="form-control" required>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="description"><span class="text-danger">*</span>内容</label>
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="price"><span class="text-danger">*</span>价格</label>
 								<div class="col-sm-12 col-md-7 col-lg-9">
-									<input type="text" id="description" name="description" value="" placeholder="请输入内容" class="form-control" required>
+									<input type="number" id="price" name="price" value="" placeholder="请输入价格" class="form-control" required>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="address"><span class="text-danger">*</span>地址</label>
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="stock"><span class="text-danger">*</span>库存</label>
 								<div class="col-sm-12 col-md-7 col-lg-9">
-									<input type="text" id="address" name="address" value="" placeholder="请输入地址" class="form-control" required>
+									<input type="number" id="stock" name="stock" value="" placeholder="请输入库存" class="form-control" required>
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="newsTime"><span class="text-danger">*</span>发生时间</label>
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="summary"><span class="text-danger">* </span>简介</label>
 								<div class="col-sm-12 col-md-7 col-lg-9">
-									<input type="text" id="newsTime" name="newsTime" value="" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm',firstDayOfWeek:1,readOnly:true})" placeholder="请选择发生时间" class="form-control Wdate" required>
+									<input type="text" id="summary" name="summary" value="" placeholder="请输入简介" class="form-control" required>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="introduction"><span class="text-danger">*</span>介绍</label>
+								<div class="col-sm-12 col-md-7 col-lg-9">
+									<input type="text" id="introduction" name="introduction" value="" placeholder="请输入介绍" class="form-control" required>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="theme"><span class="text-danger">*</span>分类</label>
+								<div class="col-sm-12 col-md-7 col-lg-9">
+									<%--<input type="text" id="theme" name="theme" value="" placeholder="请输入分类" class="form-control" required>--%>
+										<select id="theme"  class="form-control" name="theme">
+											<c:forEach var="t" items="${list}">
+												<option value="${t.id}">${t.name}</option>
+											</c:forEach>
+										</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="type"><span class="text-danger">*</span>旅游方式</label>
+								<div class="col-sm-12 col-md-7 col-lg-9">
+									<input type="text" id="type" name="type" value="" placeholder="请输入旅游方式" class="form-control" required>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="city"><span class="text-danger">*</span>开始地点</label>
+								<div class="col-sm-12 col-md-7 col-lg-9">
+									<input type="text" id="city" name="city" value="" placeholder="请输入开始地点" class="form-control" required>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="discount"><span class="text-danger">*</span>优惠金额</label>
+								<div class="col-sm-12 col-md-7 col-lg-9">
+									<input type="number" id="discount" name="discount" value="" placeholder="请输入优惠金额" class="form-control" required>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-12 col-md-4 col-lg-2 control-label" for="mainImgUrl"><span class="text-danger">*</span>主图</label>
+								<div class="col-sm-12 col-md-7 col-lg-9">
+									<input type="file" class="file-loading" id="file" name="file" value="" placeholder="请输入主图">
+									<input  type="hidden" id="mainImgUrl" name="mainImgUrl" value="" placeholder="请输入主图" class="form-control" required>
 								</div>
 							</div>
 
@@ -139,6 +187,7 @@
 
 	<script>
     var _ctx = '${ctx}';
+    var file_name = "";
     $(".chosen-select").chosen({
       no_results_text: '未找到此项',
       width: "100%",
@@ -146,6 +195,7 @@
       disable_search_threshold: 10
     });
     $(document).ready(function() {
+        // $("#theme").load(_ctx + '/theme/list');
       $("#input_form").validate({
         debug: true,
         submitHandler: function(form) {
@@ -154,21 +204,172 @@
       });
       function addform(form) {
         $.ajax({
-          url: _ctx + "/news/add",
+          url: _ctx + "/product/add",
           type: "post",
           data: $(form).serialize(),
           success: function(data) {
             if (data.status == '1') {
               toastr.success('', data.msg);
-              window.location.href=_ctx+"/news/list"; 
+              window.location.href=_ctx+"/product/list"; 
             } else
               toastr.error('', data.msg);
           },
           error: function(data) {
-            toastr.error('', '发布失败');
+            toastr.error('', '上架失败');
           }
         });
       }
+
+
+        function deleteimage(filename) {
+            $.ajax({
+                url: _ctx + "/product/add/mainImgUrl/delete",
+                type: "delete",
+                data: filename,
+                success: function(data) {
+                    if (data.status == '1') {
+                        file_name = '';
+                        toastr.success('', data.msg);
+                        // window.location.href=_ctx+"/product/list";
+                    } else{
+                        toastr.error('', data.msg);
+                    }
+
+                },
+                error: function(data) {
+                    toastr.error('', '册除失败');
+                }
+            });
+        }
+
+        //单个图片上传配置
+        $("#file").fileinput({
+            language: 'zh',
+            uploadUrl: _ctx + "/product/add/mainImgUrl/upload", //服务端上传地址
+            dropZoneEnabled: true, //是否启动拖拽
+            uploadAsync: true, //false同步批量上传,true异步上传
+            showCaption: false, //是否显示按钮前的INPUT
+            autoReplace: true, // 替换上一次浏览的图像，
+            validateInitialCount: true, //是否包括已有的文件数，新加文件个数和现有文件相加的判断，<编辑页面时开启,新增加页面关闭>
+            overwriteInitial: true, //是否要覆盖已有的内容。<编辑页面时开启,新增加页面关闭>
+            minFileCount: 1, //最小文件数，为0可选
+            maxFileCount: 1, //最大文件数，为0无限
+            maxFileSize: 1000, //文件大小限制
+            previewFileType: "image", //文件类型
+            allowedFileExtensions: ["jpg", "gif", "png", "jpeg"],//文件允许后缀名称
+            browseClass: "btn btn-primary", //自定义浏览按钮样式
+            minImageWidth: 10,
+            minImageHeight: 10,
+            maxImageWidth: 1200,
+            maxImageHeight: 1200,
+            // msgFilesTooLess: '必须上传 <b>{n}</b>个{files}，您可以选择新的文件进行替换. ',
+            layoutTemplates: {
+                actionUpload: '' //删除小按钮
+            },
+            initialCaption: "请选择本地图片" ,//默认输入框文字
+            // deleteUrl: _ctx + "/product/add/mainImgUrl/delete", //服务端删除地址
+            // deleteExtraData: {fileName:file_name}
+            <%--initialPreview: ['<img src="${ctx}/static/img/a1.jpg" class="file-preview-image" alt="The Moon" title="The Moon">'],//编辑页面初始化数据--%>
+            // initialPreviewConfig: [{
+            //     caption: "图片一",
+            //     width: "120px",
+            //     url: "/111",
+            //     key: 1
+            // },
+            //     //URL 为从服务端删除图片的地址
+            //
+            // ],
+            // //通过此方法可以删除服务端上传的图片
+
+            /*
+             uploadExtraData: function(previewId, index) {
+                   return{
+                       userid: "10000",
+                       username: "zifan",
+                       key: index
+                   }
+            },*///扩展AJAX传送数据。
+
+        })
+		// 	.off('filepreupload').on('filepreupload', function() {
+        //     return alert("确定要上传文件吗？")
+        // })
+
+            .on("filesuccessremove",function(event,key){
+                console.log("filesuccessremove");
+                if (file_name != ''){
+                    deleteimage(file_name);
+				}
+                console.log(event,key);
+            })
+
+            .on("filepredelete",function(event,key){
+                console.log("filepredelete");
+                if (file_name != ''){
+                    deleteimage(file_name);
+                }
+                console.log(event,key);
+            })
+
+            .on("filedeleted",function(event,key){
+                console.log("filedeleted");
+                // if (file_name != ''){
+                //     deleteimage(file_name);
+                // }
+                console.log(event,key);
+            })
+
+            .on("fileclear",function(event,key){
+                console.log("fileclear");
+                if (file_name != ''){
+                    deleteimage(file_name);
+                }
+                console.log(event,key);
+            })
+
+
+            .on("filecleared",function(event,key){
+                console.log("filecleared");
+                // if (file_name != ''){
+                //     deleteimage(file_name);
+                // }
+                console.log(event,key);
+            })
+
+
+            .on("filedeleteerror",function(event,key){
+                console.log("filedeleteerror");
+                console.log(event,key);
+            })
+
+            .on('fileuploaderror', function(event, data, previewId, index) {
+                var form = data.form,
+                    files = data.files,
+                    extra = data.extra,
+                    response = data.response,
+                    reader = data.reader;
+                //console.log(data)
+                toastr.error('', '保存失败');
+            })
+
+            .on('fileuploaded',function(event, data, previewId, index){
+                data = data.response;
+                if (data.status == '1') {
+                    console.log("fileuploaded:1");
+                    console.log("data:" + JSON.stringify(data));
+                    file_name = data.url;
+					$("#mainImgUrl").attr('value',data.url);
+                    toastr.success('', data.msg);
+                } else {
+                    console.log("fileuploaded:2");
+                    console.log("data:" + JSON.stringify(data));
+                    toastr.error('', data.msg);
+                }
+            })
+
+            .on('filezoomshow', function(event, params) {
+                console.log('File zoom show ', params.sourceEvent, params.previewId, params.modal);
+            });
 
     });
   </script>

@@ -11,7 +11,7 @@
  Target Server Version : 100137
  File Encoding         : 65001
 
- Date: 10/12/2018 23:59:07
+ Date: 12/12/2018 00:54:52
 */
 
 SET NAMES utf8mb4;
@@ -377,6 +377,8 @@ INSERT INTO `Theme_product` VALUES (1, 998);
 INSERT INTO `Theme_product` VALUES (1, 999);
 INSERT INTO `Theme_product` VALUES (1, 1002);
 INSERT INTO `Theme_product` VALUES (1, 1003);
+INSERT INTO `Theme_product` VALUES (1, 1014);
+INSERT INTO `Theme_product` VALUES (1, 1016);
 INSERT INTO `Theme_product` VALUES (2, 2);
 INSERT INTO `Theme_product` VALUES (2, 9);
 INSERT INTO `Theme_product` VALUES (2, 11);
@@ -710,6 +712,7 @@ INSERT INTO `Theme_product` VALUES (2, 994);
 INSERT INTO `Theme_product` VALUES (2, 995);
 INSERT INTO `Theme_product` VALUES (2, 1005);
 INSERT INTO `Theme_product` VALUES (2, 1006);
+INSERT INTO `Theme_product` VALUES (2, 1017);
 INSERT INTO `Theme_product` VALUES (3, 3);
 INSERT INTO `Theme_product` VALUES (3, 7);
 INSERT INTO `Theme_product` VALUES (3, 10);
@@ -1036,8 +1039,10 @@ INSERT INTO `Theme_product` VALUES (3, 997);
 INSERT INTO `Theme_product` VALUES (3, 1000);
 INSERT INTO `Theme_product` VALUES (3, 1001);
 INSERT INTO `Theme_product` VALUES (3, 1004);
+INSERT INTO `Theme_product` VALUES (3, 1015);
 INSERT INTO `Theme_product` VALUES (4, 4);
 INSERT INTO `Theme_product` VALUES (4, 1007);
+INSERT INTO `Theme_product` VALUES (4, 1018);
 
 -- ----------------------------
 -- Table structure for comments
@@ -3163,7 +3168,7 @@ CREATE TABLE `product`  (
   `create_time` datetime(0) NOT NULL,
   `updata_time` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1008 CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 1019 CHARACTER SET = gbk COLLATE = gbk_chinese_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of product
@@ -4173,6 +4178,11 @@ INSERT INTO `product` VALUES (1004, 'test_name997', 123, 3465, 'test_url997', 't
 INSERT INTO `product` VALUES (1005, 'test_name998', 123, 3465, 'test_url998', 'test_summary998', 4, 'test_Introduction998', '1', 2, 'test_type998', 'test_city998', 6, NULL, '2018-12-08 00:00:00', NULL);
 INSERT INTO `product` VALUES (1006, 'test_name999', 123, 3465, 'test_url999', 'test_summary999', 4, 'test_Introduction999', '1', 2, 'test_type999', 'test_city999', 6, NULL, '2018-12-08 00:00:00', NULL);
 INSERT INTO `product` VALUES (1007, 'test_name1000', 123, 3465, 'test_url1000', 'test_summary1000', 4, 'test_Introduction1000', '1', 2, 'test_type1000', 'test_city1000', 6, NULL, '2018-12-08 00:00:00', NULL);
+INSERT INTO `product` VALUES (1014, '* 产品名', 34653, 679, '65d30017d0bd4a36bf492e00307a6a10', '* 简介', NULL, '*介绍', NULL, NULL, '*旅游方式', '*开始地点', 8709, NULL, '2018-12-11 22:05:47', NULL);
+INSERT INTO `product` VALUES (1015, '* 产品名', 999, 679, 'Ptd3l3yY.png', '简介', NULL, '介绍', NULL, NULL, '*旅游方式', '开始地点', 555, NULL, '2018-12-11 23:56:43', NULL);
+INSERT INTO `product` VALUES (1016, '产品名1', 346, 457, 'WnZ8L62Y.png', '简介1', NULL, '介绍1', NULL, NULL, '旅游方式1', '开始地点1', 658, NULL, '2018-12-12 00:24:59', NULL);
+INSERT INTO `product` VALUES (1017, '产品名1', 6585, 5687, '9TWzqNKZ.png', '简介1', NULL, '介绍1', NULL, NULL, '*旅游方式3', '开始地点', 769, NULL, '2018-12-12 00:27:36', NULL);
+INSERT INTO `product` VALUES (1018, '产品名2', 56856, 67856, 'Vr9TrFMX.png', '简介2', NULL, '介绍2', NULL, NULL, '旅游方式2', '开始地点2', 87978, NULL, '2018-12-12 00:49:47', NULL);
 
 -- ----------------------------
 -- Table structure for product_date
@@ -7287,7 +7297,7 @@ INSERT INTO `t_sys_permission` VALUES ('1', '订单管理', '', NULL, 'ddgl', NU
 INSERT INTO `t_sys_permission` VALUES ('182834649146601472', '管理首页', 'fa-home', 'index', 'glsy', NULL, 1, 1, 1);
 INSERT INTO `t_sys_permission` VALUES ('182834649318567931', '产品管理', '', NULL, 'cpgl', NULL, 1, 1, 300);
 INSERT INTO `t_sys_permission` VALUES ('182834649318567936', '站内新闻', '', NULL, 'znxy', NULL, 1, 1, 10);
-INSERT INTO `t_sys_permission` VALUES ('182834649360510971', '新增产品', '', 'product/add', 'cpgl_czcp', 'cpgl', 1, 2, 301);
+INSERT INTO `t_sys_permission` VALUES ('182834649360510971', '上架产品', '', 'product/add', 'cpgl_czcp', 'cpgl', 1, 2, 301);
 INSERT INTO `t_sys_permission` VALUES ('182834649360510976', '新闻发布', '', 'news/add', 'znxy_xwfb', 'znxy', 1, 2, 11);
 INSERT INTO `t_sys_permission` VALUES ('182834649389871101', '产品列表', '', 'product/list', 'cpgl_cplb', 'cpgl', 1, 2, 302);
 INSERT INTO `t_sys_permission` VALUES ('182834649389871104', '新闻列表', '', 'news/list', 'znxy_xwlb', 'znxy', 1, 2, 12);

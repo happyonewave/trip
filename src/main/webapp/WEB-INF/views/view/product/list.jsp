@@ -144,7 +144,27 @@
         var keywords = $("#keywords").val();
         $("#ibox").load(_ctx + '/product/list_page',{"keywords":keywords});
       }
-
+        $(".delete").each(function(index,obj){
+            $(this).click(function(){
+                console.log("click");
+                var id = $(this).data("id");
+                $.ajax({
+                    url: _ctx + "/product/delete/" + id,
+                    type: "delete",
+                    // data: $(form).serialize(),
+                    success: function(data) {
+                        if (data.status == '1') {
+                            list_page();//保存成功，刷新数据
+                            toastr.success('', data.msg);
+                        } else
+                            toastr.error('', data.msg);
+                    },
+                    error: function(data) {
+                        toastr.error('', '下架失败');
+                    }
+                });
+            });
+        });
       function editForm(form) {
         $.ajax({
           url: _ctx + "/product/edit",

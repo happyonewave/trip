@@ -2,10 +2,11 @@ package com.qin.mapper.simple;
 
 import com.qin.model.simple.Theme;
 import com.qin.model.simple.ThemeExample;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
+@Mapper
 public interface ThemeMapper {
     int countByExample(ThemeExample example);
 
@@ -28,4 +29,8 @@ public interface ThemeMapper {
     int updateByPrimaryKeySelective(Theme record);
 
     int updateByPrimaryKey(Theme record);
+
+    List<Theme> findThemeByKeywords(String keywords);
+
+    List<Theme> findThemeByPage(String keywords);
 }

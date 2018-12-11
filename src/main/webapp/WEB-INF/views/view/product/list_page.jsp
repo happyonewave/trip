@@ -55,7 +55,7 @@
                         <td>${n.name}</td>
                         <td>${n.price}</td>
                         <td>${n.stock}</td>
-                        <td><img src="http://noone.top/images/${n.mainImgUrl}" height="30%"/></td>
+                        <td><img src="${ctx }/static/images/product/${n.mainImgUrl}" height="30%"/></td>
                         <td>${n.summary}</td>
                             <%--<td>${n.imgId}</td>--%>
                         <td>${n.introduction}</td>
@@ -69,6 +69,14 @@
                         <td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                             <%--<td><fmt:formatDate value="${n.productTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
                             <%--<td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
+                        <%--<td class="text-right text-nowrap">--%>
+                            <%--<div class="btn-group ">--%>
+                                <%--<button class="btn btn-white btn-sm delete"  data-id="${n.id }">--%>
+                                    <%--<i class="fa fa-pencil">下架</i>--%>
+                                <%--</button>--%>
+                            <%--</div>--%>
+                        <%--</td>--%>
+
                         <td class="text-right text-nowrap">
                             <div class="btn-group ">
                                 <button class="btn btn-white btn-sm edit" data-id="${n.id }" data-toggle="modal"

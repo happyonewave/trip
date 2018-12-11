@@ -3,12 +3,17 @@ package com.qin.service.simple.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qin.common.constants.Constants;
+import com.qin.common.exception.BusinessException;
 import com.qin.config.datasource.DataSourceEnum;
 import com.qin.config.datasource.TargetDataSource;
+import com.qin.config.pk.FactoryAboutKey;
+import com.qin.config.pk.TableEnum;
 import com.qin.mapper.simple.ProductMapper;
+import com.qin.mapper.simple.ThemeProductMapper;
 import com.qin.model.simple.Product;
 import com.qin.model.simple.ProductExample;
 import com.qin.model.simple.ProductExample.Criteria;
+import com.qin.model.simple.ThemeProductKey;
 import com.qin.service.simple.ProductService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -16,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
@@ -32,23 +38,46 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper productMapper;
 
+    @Autowired
+    private ThemeProductMapper themeProductMapper;
+
     @Transactional
     @Override
     public boolean addProduct(Product product) {
         if (product != null) {
-//            product.setId(Integer.parseInt(FactoryAboutKey.getPK(TableEnum.PRODUCT)) );
-            product.setCreateTime(new Timestamp(Calendar.getInstance().getTimeInMillis()));
-            int flag = productMapper.insert(product);
+//                product.setId(Integer.parseInt(FactoryAboutKey.getPK(TableEnum.PRODUCT)) );
+//                product.setId(Integer.parseInt(FactoryAboutKey.getPK(TableEnum.PRODUCT)) );
+                product.setCreateTime(new Timestamp(Calendar.getInstance().getTimeInMillis()));
+                int flag = productMapper.insertSelective(product);
+                ThemeProductKey themeProduct =    new ThemeProductKey();
+                themeProduct.setProductId(product.getId());
+                themeProduct.setThemeId(Integer.parseInt(product.getTheme()));
+                int flag2 = themeProductMapper.insert(themeProduct);
+                // if (StringUtils.equals(product.getTitle(), "a"))
+                // throw new BusinessException("001", "测试事务回溯");
+                if (flag == 1&&flag2 == 1)
+                    return true;
+                else
+                return false;
+
+        } else
+            return false;
+    }
+    @Transactional
+    @Override
+    public boolean deleteProduct(Integer id) {
+        if (id != null) {
+            int flag = productMapper.deleteByPrimaryKey(id);
             // if (StringUtils.equals(product.getTitle(), "a"))
             // throw new BusinessException("001", "测试事务回溯");
             if (flag == 1)
                 return true;
             else
                 return false;
+
         } else
             return false;
     }
-
     @Override
     public boolean editProduct(Product product) {
         if (product != null && StringUtils.isNotBlank(product.getId() + "")) {

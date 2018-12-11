@@ -10,6 +10,8 @@ public interface ProductService {
 
     public boolean addProduct(Product product);
 
+    public boolean deleteProduct(Integer id);
+
     public boolean editProduct(Product product);
 
     public Product findProductById(Integer productId);
