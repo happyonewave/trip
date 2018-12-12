@@ -18,6 +18,7 @@ import java.util.Calendar;
  */
 @Component
 public class ApplicationContext implements ServletContextAware {
+    public static String imagePath = "";
 
     private static final Logger log = LoggerFactory.getLogger(ApplicationContext.class);
 
@@ -30,9 +31,10 @@ public class ApplicationContext implements ServletContextAware {
         try {
             filePath = new File(ResourceUtils.getURL(ResourceUtils.WAR_URL_PREFIX).getPath());
 //            File upload = new File(filePath.getAbsolutePath(),"src/main/webapp/static/images/product");
-            context.setAttribute("imagePath",filePath+"src/main/webapp/static/images/product");
+            imagePath = filePath + "src/main/webapp/static/images/product";
+            context.setAttribute("imagePath", filePath + "src/main/webapp/static/images/product");
         } catch (FileNotFoundException e) {
-            throw  new BusinessException("获取路径错误");
+            throw new BusinessException("获取路径错误");
         }
         log.info("# version={} , contextPath={}", datetime, contextPath);
         context.setAttribute("version_css", datetime);

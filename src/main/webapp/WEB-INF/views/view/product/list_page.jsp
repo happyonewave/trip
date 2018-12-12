@@ -69,13 +69,13 @@
                         <td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                             <%--<td><fmt:formatDate value="${n.productTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
                             <%--<td><fmt:formatDate value="${n.createTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>--%>
-                        <%--<td class="text-right text-nowrap">--%>
-                            <%--<div class="btn-group ">--%>
-                                <%--<button class="btn btn-white btn-sm delete"  data-id="${n.id }">--%>
-                                    <%--<i class="fa fa-pencil">下架</i>--%>
-                                <%--</button>--%>
-                            <%--</div>--%>
-                        <%--</td>--%>
+                        <td class="text-right text-nowrap">
+                            <div class="btn-group ">
+                                <button class="btn btn-white btn-sm delete"  data-id="${n.id }">
+                                    <i class="fa fa-pencil">下架</i>
+                                </button>
+                            </div>
+                        </td>
 
                         <td class="text-right text-nowrap">
                             <div class="btn-group ">

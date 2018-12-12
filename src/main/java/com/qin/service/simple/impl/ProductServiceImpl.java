@@ -4,6 +4,8 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qin.common.constants.Constants;
 import com.qin.common.exception.BusinessException;
+import com.qin.common.util.ImageUtil;
+import com.qin.config.ApplicationContext;
 import com.qin.config.datasource.DataSourceEnum;
 import com.qin.config.datasource.TargetDataSource;
 import com.qin.config.pk.FactoryAboutKey;
@@ -13,6 +15,7 @@ import com.qin.mapper.simple.ThemeProductMapper;
 import com.qin.model.simple.Product;
 import com.qin.model.simple.ProductExample;
 import com.qin.model.simple.ProductExample.Criteria;
+import com.qin.model.simple.ThemeProductExample;
 import com.qin.model.simple.ThemeProductKey;
 import com.qin.service.simple.ProductService;
 import org.apache.commons.lang3.StringUtils;
@@ -23,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
+import javax.servlet.ServletContext;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
@@ -41,36 +45,22 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ThemeProductMapper themeProductMapper;
 
+
     @Transactional
     @Override
     public boolean addProduct(Product product) {
         if (product != null) {
 //                product.setId(Integer.parseInt(FactoryAboutKey.getPK(TableEnum.PRODUCT)) );
 //                product.setId(Integer.parseInt(FactoryAboutKey.getPK(TableEnum.PRODUCT)) );
-                product.setCreateTime(new Timestamp(Calendar.getInstance().getTimeInMillis()));
-                int flag = productMapper.insertSelective(product);
-                ThemeProductKey themeProduct =    new ThemeProductKey();
-                themeProduct.setProductId(product.getId());
-                themeProduct.setThemeId(Integer.parseInt(product.getTheme()));
-                int flag2 = themeProductMapper.insert(themeProduct);
-                // if (StringUtils.equals(product.getTitle(), "a"))
-                // throw new BusinessException("001", "测试事务回溯");
-                if (flag == 1&&flag2 == 1)
-                    return true;
-                else
-                return false;
-
-        } else
-            return false;
-    }
-    @Transactional
-    @Override
-    public boolean deleteProduct(Integer id) {
-        if (id != null) {
-            int flag = productMapper.deleteByPrimaryKey(id);
+            product.setCreateTime(new Timestamp(Calendar.getInstance().getTimeInMillis()));
+            int flag = productMapper.insertSelective(product);
+            ThemeProductKey themeProduct = new ThemeProductKey();
+            themeProduct.setProductId(product.getId());
+            themeProduct.setThemeId(Integer.parseInt(product.getTheme()));
+            int flag2 = themeProductMapper.insert(themeProduct);
             // if (StringUtils.equals(product.getTitle(), "a"))
             // throw new BusinessException("001", "测试事务回溯");
-            if (flag == 1)
+            if (flag == 1 && flag2 == 1)
                 return true;
             else
                 return false;
@@ -78,6 +68,28 @@ public class ProductServiceImpl implements ProductService {
         } else
             return false;
     }
+
+    @Transactional
+    @Override
+    public boolean deleteProduct(Integer id) {
+        if (id != null) {
+            Product product = productMapper.selectByPrimaryKey(id);
+            int flag = productMapper.deleteByPrimaryKey(id);
+            ThemeProductExample example = new ThemeProductExample();
+            ThemeProductExample.Criteria criteria = example.createCriteria();
+            criteria.andProductIdEqualTo(id);
+            int flag2 = themeProductMapper.deleteByExample(example);
+            // if (StringUtils.equals(product.getTitle(), "a"))
+            // throw new BusinessException("001", "测试事务回溯");
+            if (flag == 1 && flag2 == 1) {
+                return ImageUtil.deleteFile(ApplicationContext.imagePath + "/" + product.getMainImgUrl());
+            } else
+                return false;
+
+        } else
+            return false;
+    }
+
     @Override
     public boolean editProduct(Product product) {
         if (product != null && StringUtils.isNotBlank(product.getId() + "")) {

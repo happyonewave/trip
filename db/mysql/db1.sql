@@ -11,7 +11,7 @@
  Target Server Version : 100137
  File Encoding         : 65001
 
- Date: 12/12/2018 00:54:52
+ Date: 12/12/2018 14:09:18
 */
 
 SET NAMES utf8mb4;
@@ -1042,7 +1042,6 @@ INSERT INTO `Theme_product` VALUES (3, 1004);
 INSERT INTO `Theme_product` VALUES (3, 1015);
 INSERT INTO `Theme_product` VALUES (4, 4);
 INSERT INTO `Theme_product` VALUES (4, 1007);
-INSERT INTO `Theme_product` VALUES (4, 1018);
 
 -- ----------------------------
 -- Table structure for comments
@@ -4182,7 +4181,6 @@ INSERT INTO `product` VALUES (1014, '* 产品名', 34653, 679, '65d30017d0bd4a36
 INSERT INTO `product` VALUES (1015, '* 产品名', 999, 679, 'Ptd3l3yY.png', '简介', NULL, '介绍', NULL, NULL, '*旅游方式', '开始地点', 555, NULL, '2018-12-11 23:56:43', NULL);
 INSERT INTO `product` VALUES (1016, '产品名1', 346, 457, 'WnZ8L62Y.png', '简介1', NULL, '介绍1', NULL, NULL, '旅游方式1', '开始地点1', 658, NULL, '2018-12-12 00:24:59', NULL);
 INSERT INTO `product` VALUES (1017, '产品名1', 6585, 5687, '9TWzqNKZ.png', '简介1', NULL, '介绍1', NULL, NULL, '*旅游方式3', '开始地点', 769, NULL, '2018-12-12 00:27:36', NULL);
-INSERT INTO `product` VALUES (1018, '产品名2', 56856, 67856, 'Vr9TrFMX.png', '简介2', NULL, '介绍2', NULL, NULL, '旅游方式2', '开始地点2', 87978, NULL, '2018-12-12 00:49:47', NULL);
 
 -- ----------------------------
 -- Table structure for product_date
