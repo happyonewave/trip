@@ -77,14 +77,14 @@
                             </div>
                         </td>
 
-                        <td class="text-right text-nowrap">
-                            <div class="btn-group ">
-                                <button class="btn btn-white btn-sm edit" data-id="${n.id }" data-toggle="modal"
-                                        data-target="#edit">
-                                    <i class="fa fa-pencil"></i> 编辑
-                                </button>
-                            </div>
-                        </td>
+                        <%--<td class="text-right text-nowrap">--%>
+                            <%--<div class="btn-group ">--%>
+                                <%--<button class="btn btn-white btn-sm edit" data-id="${n.id }" data-toggle="modal"--%>
+                                        <%--data-target="#edit">--%>
+                                    <%--<i class="fa fa-pencil"></i> 编辑--%>
+                                <%--</button>--%>
+                            <%--</div>--%>
+                        <%--</td>--%>
                     </tr>
                 </c:forEach>
             </c:if>

@@ -3,18 +3,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <div class="sidebar-scroll">
 	<div class="logo">
-		<a href="${ctx}/index"><img src="${ctx }/static/images/logo_icon.png" alt="">示例系统</a>
+		<a href="${ctx}/index"><img src="${ctx }/static/images/logo_icon.png" alt="">鲲游后台</a>
 	</div>
 	<div class="sidebar-collapse">
 		<div class="nav-header" id="side-head">
 			<div class="dropdown profile-element text-center">
-				<span><img alt="image" class="img-circle " src="${ctx }/static/img/profile_small.jpg" /></span> <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Jack</strong></span>
+				<span><img alt="image" class="img-circle " src="${ctx }/static/img/profile_small.jpg" /></span> <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"></strong></span>
 						<span class="text-muted text-xs block">用户设置<b class="caret"></b></span>
 				</span> </a>
 				<ul class="dropdown-menu animated fadeInRight m-t-xs">
-					<li><a href="profile.html">Profile</a></li>
-					<li><a href="contacts.html">Contacts</a></li>
-					<li><a href="mailbox.html">Mailbox</a></li>
+					<%--<li><a href="profile.html">Profile</a></li>--%>
+					<%--<li><a href="contacts.html">Contacts</a></li>--%>
+					<%--<li><a href="mailbox.html">Mailbox</a></li>--%>
 					<li class="divider"></li>
 					<li><a href="${ctx }/logout">Logout</a></li>
 				</ul>
@@ -79,8 +79,8 @@
 				</c:forEach>
 			</c:if>
 
-			<li class="landing_link"><a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">系统更新</span> <span class="label label-warning pull-right">NEW</span></a></li>
-			<li class="special_link"><a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">购买服务</span></a></li>
+			<%--<li class="landing_link"><a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">系统更新</span> <span class="label label-warning pull-right">NEW</span></a></li>--%>
+			<%--<li class="special_link"><a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">购买服务</span></a></li>--%>
 		</ul>
 	</div>
 </div>

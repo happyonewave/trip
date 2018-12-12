@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后台管理系统登录</title>
+    <title>鲲游后台管理系统登录</title>
     <meta name="keyword" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="Author" content="zifan">
-    <meta name="copyright" content="胡桃夹子。All Rights Reserved">
+    <meta name="copyright" content="All Rights Reserved">
     <link href="${ctx}/static/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
 body {

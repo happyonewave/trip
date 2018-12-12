@@ -55,13 +55,13 @@ public class PermissionServiceImpl implements PermissionService {
 //        List<Permission> permissions = permissionMapper.findPermissionByUserId(userId);
         List<Permission> permissions = new ArrayList<>(Arrays.asList(
                 new Permission("管理首页", "fa-home", "index", "glsy", null, 1, 1, 1),
-                new Permission("产品管理", null, null, "cpgl", null, 1, 1, 10),
+                new Permission("产品管理", "fa-calculator", null, "cpgl", null, 1, 1, 10),
                 new Permission("上架产品", null, "product/add", "cpgl_czcp", "cpgl", 1, 2, 11),
                 new Permission("产品列表", null, "product/list", "cpgl_cplb", "cpgl", 1, 2, 12),
-                new Permission("订单管理", null, null, "ddgl", null, 1, 1, 20),
+                new Permission("订单管理", "fa-calculator", null, "ddgl", null, 1, 1, 20),
                 new Permission("订单列表", null, "order/list", "ddgl_cplb", "ddgl", 1, 2, 21),
-                new Permission("评价管理", null, null, "pjgl", null, 1, 1, 30),
-                new Permission("用户列表", null, "comments/list", "pjgl_pjlb", "pjgl", 1, 2, 31),
+                new Permission("评价管理", "fa-calculator", null, "pjgl", null, 1, 1, 30),
+                new Permission("评价列表", null, "comments/list", "pjgl_pjlb", "pjgl", 1, 2, 31),
                 new Permission("用户管理", "fa-user", null, "yhgl", null, 1, 1, 40),
                 new Permission("用户列表", null, "user/list", "yhgl_yhlb", "yhgl", 1, 2, 41)
 //                ,

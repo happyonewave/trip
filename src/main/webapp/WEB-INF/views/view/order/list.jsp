@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>后台管理系统</title>
+<title>鲲游后台管理系统</title>
 <meta name="keyword" content="">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,11 +38,11 @@
 			<!--------当前位置----->
 			<div class="row  border-bottom white-bg page-heading">
 				<div class="col-sm-4">
-					<h2>电商配置</h2>
+					<h2>订单列表</h2>
 					<ol class="breadcrumb">
 						<li><a href="${ctx}/index">管理首页</a></li>
-						<li><a href="javascript:void(0)">站内新闻</a></li>
-						<li class="active">新闻列表</li>
+						<li><a href="javascript:void(0)">订单管理</a></li>
+						<li class="active">订单列表</li>
 
 					</ol>
 				</div>

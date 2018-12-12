@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>后台管理系统</title>
+<title>鲲游后台管理系统</title>
 <meta name="keyword" content="">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,10 +40,10 @@
 			<!--------当前位置----->
 			<div class="row  border-bottom white-bg page-heading">
 				<div class="col-sm-4">
-					<h2>电商管理</h2>
+					<h2>上架产品</h2>
 					<ol class="breadcrumb">
 						<li><a href="index.html">管理首页</a></li>
-						<li>站内产品</li>
+						<li>产品管理</li>
 						<li class="active">上架产品</li>
 					</ol>
 				</div>
