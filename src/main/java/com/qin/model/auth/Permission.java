@@ -37,6 +37,20 @@ public class Permission implements BaseEntity<String> {
     /** 父菜单编码 **/
     private String parentKey;
 
+    public Permission() {
+    }
+
+    public Permission(String name, String cssClass, String url, String key, String parentKey, Integer hide, Integer lev, Integer sort ) {
+        this.name = name;
+        this.cssClass = cssClass;
+        this.key = key;
+        this.hide = hide;
+        this.lev = lev;
+        this.url = url;
+        this.sort = sort;
+        this.parentKey = parentKey;
+    }
+
     public String getId() {
         return id;
     }
