@@ -7,11 +7,12 @@ import com.qin.common.util.salt.Encodes;
 import com.qin.config.pk.FactoryAboutKey;
 import com.qin.config.pk.TableEnum;
 import com.qin.mapper.auth.RoleMapper;
-import com.qin.mapper.auth.UserMapper;
 import com.qin.mapper.auth.UserRoleMapper;
+import com.qin.mapper.simple.UserMapper;
 import com.qin.model.auth.Role;
-import com.qin.model.auth.User;
 import com.qin.model.auth.UserRole;
+import com.qin.model.simple.User;
+import com.qin.model.simple.UserExample;
 import com.qin.service.auth.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -54,61 +55,62 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void addUser(User user, Role role) {
-        if (user == null || role == null) {
-            throw new BusinessException("user.registr.error", "注册信息错误");
-        }
-
-        if (StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword())) {
-            throw new BusinessException("user.registr.error", "注册信息错误");
-        }
-
-        if (StringUtils.isBlank(role.getId())) {
-            throw new BusinessException("user.registr.error", "用户未指定所属角色");
-        }
-
-        // Role r = daoService.getByPrimaryKey(Role.class, role.getId());
-        Role r = roleMapper.findById(role.getId());
-        if (r == null) {
-            throw new BusinessException("user.registr.error", "用户未指定所属组织或角色");
-        }
-        
-        User u = userMapper.findUserByName(user.getUsername());
-        if(u!=null){
-            throw new BusinessException("user.registr.error", "用户账号已经存在,username="+user.getUsername());
-        }
-
-        entryptPassword(user);
-        user.setStatus(Constants.STATUS_VALID);
-        user.setCreateTime(Calendar.getInstance().getTime());
-        user.setId(FactoryAboutKey.getPK(TableEnum.T_SYS_USER));
-        userMapper.insert(user);
-
-        UserRole ur = new UserRole();
-        ur.setRoleId(r.getId());
-        ur.setUserId(user.getId());
-        ur.setId(FactoryAboutKey.getPK(TableEnum.T_SYS_USER_ROLE));
-        // daoService.save(ur);
-        userRoleMapper.insert(ur);
+//        if (user == null || role == null) {
+//            throw new BusinessException("user.registr.error", "注册信息错误");
+//        }
+//
+//        if (StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword())) {
+//            throw new BusinessException("user.registr.error", "注册信息错误");
+//        }
+//
+//        if (StringUtils.isBlank(role.getId())) {
+//            throw new BusinessException("user.registr.error", "用户未指定所属角色");
+//        }
+//
+//        // Role r = daoService.getByPrimaryKey(Role.class, role.getId());
+//        Role r = roleMapper.findById(role.getId());
+//        if (r == null) {
+//            throw new BusinessException("user.registr.error", "用户未指定所属组织或角色");
+//        }
+//
+//        User u = userMapper.selectByUserName(user.getUsername());
+//        if(u!=null){
+//            throw new BusinessException("user.registr.error", "用户账号已经存在,username="+user.getUsername());
+//        }
+//
+//        entryptPassword(user);
+////        user.setStatus(Constants.STATUS_VALID);
+//        user.setCreateTime(Calendar.getInstance().getTime());
+//        user.setId(FactoryAboutKey.getPK(TableEnum.T_SYS_USER));
+//        userMapper.insert(user);
+//
+//        UserRole ur = new UserRole();
+//        ur.setRoleId(r.getId());
+//        ur.setUserId(user.getId());
+//        ur.setId(FactoryAboutKey.getPK(TableEnum.T_SYS_USER_ROLE));
+//        // daoService.save(ur);
+//        userRoleMapper.insert(ur);
     }
 
     @Override
     public void updatePassword(User user) {
-        if (log.isDebugEnabled()) {
-            log.debug("## update User password.");
-        }
-        User u = userMapper.findById(user.getId());
-        u.setPassword(user.getPassword());
-        entryptPassword(u);
-        u.setModifyTime(Calendar.getInstance().getTime());
-        // daoService.update(u);
-        userMapper.update(u);
+//        if (log.isDebugEnabled()) {
+//            log.debug("## update User password.");
+//        }
+//        User u = userMapper.selectByPrimaryKey(user.getId());
+//        u.setPassword(user.getPassword());
+//        entryptPassword(u);
+//        u.setModifyTime(Calendar.getInstance().getTime());
+//        // daoService.update(u);
+//        userMapper.updateByPrimaryKeySelective(u);
     }
 
     @Override
     public User findUserByName(String username) {
         try {
-            return userMapper.findUserByName(username);
+            return userMapper.selectByUserName(username);
         } catch (Exception e) {
+            e.printStackTrace();
             log.error("# 根据账号查询用户报错 , username={}", username);
             throw new BusinessException("1001", "查询用户失败");
         }
@@ -117,22 +119,23 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void updateUserLastLoginTime(User user) {
-        User u = userMapper.findById(user.getId());
+        User u = userMapper.selectByPrimaryKey(user.getId());
         if (u != null) {
             user = new User();
-            user.setLastLoginTime(Calendar.getInstance().getTime());
+//            user.setLastLoginTime(Calendar.getInstance().getTime());
             user.setId(u.getId());
-            userMapper.update(u);
+            userMapper.updateByPrimaryKeySelective(u);
         }
     }
 
     @Override
     public List<User> findUsers() {
-        return userMapper.findUsers();
+        return userMapper.selectByExample(new UserExample());
     }
 
     @Override
     public List<User> findEmp(String shopId, String empName) {
-        return userMapper.findEmp(Constants.COMMON_ROLE_CODE, Constants.STATUS_VALID, shopId, empName);
+//        return userMapper.findEmp(Constants.COMMON_ROLE_CODE, Constants.STATUS_VALID, shopId, empName);
+        return null;
     }
 }

@@ -1,6 +1,7 @@
 package com.qin.controller;
 
-import com.qin.model.auth.User;
+//import com.qin.model.auth.User;
+import com.qin.model.simple.User;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;

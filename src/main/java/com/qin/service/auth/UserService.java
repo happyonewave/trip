@@ -1,7 +1,7 @@
 package com.qin.service.auth;
 
 import com.qin.model.auth.Role;
-import com.qin.model.auth.User;
+import com.qin.model.simple.User;
 
 import java.util.List;
 

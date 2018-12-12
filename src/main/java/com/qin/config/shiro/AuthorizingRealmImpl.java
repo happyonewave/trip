@@ -6,7 +6,7 @@ import com.qin.common.util.salt.Encodes;
 import com.qin.config.shiro.vo.PermissionVo;
 import com.qin.config.shiro.vo.Principal;
 import com.qin.model.auth.Role;
-import com.qin.model.auth.User;
+import com.qin.model.simple.User;
 import com.qin.service.auth.PermissionService;
 import com.qin.service.auth.RoleService;
 import com.qin.service.auth.UserService;
@@ -76,9 +76,9 @@ public class AuthorizingRealmImpl extends AuthorizingRealm {
 
             Principal principal = new Principal();
             principal.setUser(user);
-            principal.setRoles(roleService.findRoleByUserId(user.getId()));
+            principal.setRoles(roleService.findRoleByUserId(user.getId() + ""));
 
-            SecurityUtils.getSubject().getSession().setAttribute(Constants.PERMISSION_SESSION, permissionService.getPermissions(user.getId()));
+            SecurityUtils.getSubject().getSession().setAttribute(Constants.PERMISSION_SESSION, permissionService.getPermissions(user.getId() + ""));
 
             SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, user.getPassword(), ByteSource.Util.bytes(salt), getName());
             return info;
@@ -102,7 +102,7 @@ public class AuthorizingRealmImpl extends AuthorizingRealm {
         Set<String> permissions = new HashSet<String>();
         Object permisObj = session.getAttribute(Constants.PERMISSION_URL);
         if (null == permisObj) {
-            Collection<PermissionVo> pers = permissionService.getPermissions(principal.getUser().getId());
+            Collection<PermissionVo> pers = permissionService.getPermissions(principal.getUser().getId()+"");
             for (PermissionVo permission : pers) {
                 permissions.add(permission.getUrl());
                 if (CollectionUtils.isNotEmpty(permission.getChildren())) {
@@ -119,7 +119,7 @@ public class AuthorizingRealmImpl extends AuthorizingRealm {
         Set<String> roleCodes = new HashSet<String>();
         Object roleNameObj = session.getAttribute(Constants.ROLE_CODE);
         if (null == roleNameObj) {
-            for (Role role : roleService.findRoleByUserId(principal.getUser().getId())) {
+            for (Role role : roleService.findRoleByUserId(principal.getUser().getId()+"")) {
                 roleCodes.add(role.getCode());
             }
             session.setAttribute(Constants.ROLE_CODE, roleCodes);

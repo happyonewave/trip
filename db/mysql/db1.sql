@@ -11,7 +11,7 @@
  Target Server Version : 100137
  File Encoding         : 65001
 
- Date: 12/12/2018 14:09:18
+ Date: 12/12/2018 14:57:59
 */
 
 SET NAMES utf8mb4;
@@ -7866,7 +7866,7 @@ CREATE TABLE `t_sys_user_role`  (
 -- Records of t_sys_user_role
 -- ----------------------------
 INSERT INTO `t_sys_user_role` VALUES ('182834654058131456', '182834649041743872', '182834654032965632');
-INSERT INTO `t_sys_user_role` VALUES ('182834654133628928', '182834649100464128', '182834654112657408');
+INSERT INTO `t_sys_user_role` VALUES ('182834654133628928', '182834649100464128', '2147483647');
 
 -- ----------------------------
 -- Table structure for theme

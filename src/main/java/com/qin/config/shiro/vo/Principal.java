@@ -1,7 +1,7 @@
 package com.qin.config.shiro.vo;
 
 import com.qin.model.auth.Role;
-import com.qin.model.auth.User;
+import com.qin.model.simple.User;
 
 import java.io.Serializable;
 import java.util.List;
@@ -30,7 +30,7 @@ public class Principal implements Serializable {
 
     @Override
     public String toString() {
-        return user.getTrueName();
+        return user.getUsername();
     }
 
 }

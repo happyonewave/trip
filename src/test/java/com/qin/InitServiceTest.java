@@ -2,6 +2,7 @@ package com.qin;
 
 import java.util.List;
 
+import com.qin.model.simple.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,6 @@ import com.qin.config.shiro.vo.PermissionEnumUtil;
 import com.qin.config.shiro.vo.RoleEnumUtil;
 import com.qin.model.auth.Permission;
 import com.qin.model.auth.Role;
-import com.qin.model.auth.User;
 import com.qin.service.auth.PermissionService;
 import com.qin.service.auth.RoleService;
 import com.qin.service.auth.UserService;
@@ -68,18 +68,18 @@ public class InitServiceTest {
 
             User admin = new User();
             admin.setUsername("admin");
-            admin.setEmail("admin@163.com");
-            admin.setTrueName("管理员");
+//            admin.setEmail("admin@163.com");
+//            admin.setTrueName("管理员");
             admin.setPassword(password);
-            admin.setOrganizeId(adminRole.getId());
+//            admin.setOrganizeId(adminRole.getId());
             userService.addUser(admin, adminRole);
 
             User zhangsan = new User();
             zhangsan.setUsername("zhangsan");
-            zhangsan.setTrueName("张三");
-            zhangsan.setEmail("zhangsan@139.com");
+//            zhangsan.setTrueName("张三");
+//            zhangsan.setEmail("zhangsan@139.com");
             zhangsan.setPassword(password);
-            zhangsan.setOrganizeId(commonRole.getId());
+//            zhangsan.setOrganizeId(commonRole.getId());
             userService.addUser(zhangsan, commonRole);
         } catch (Exception e) {
             e.printStackTrace();

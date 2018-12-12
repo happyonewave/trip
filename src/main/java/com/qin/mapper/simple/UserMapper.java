@@ -2,10 +2,11 @@ package com.qin.mapper.simple;
 
 import com.qin.model.simple.User;
 import com.qin.model.simple.UserExample;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
+@Mapper
 public interface UserMapper {
     int countByExample(UserExample example);
 
@@ -20,6 +21,10 @@ public interface UserMapper {
     List<User> selectByExample(UserExample example);
 
     User selectByPrimaryKey(Integer id);
+
+    User selectByUserName(String username);
+
+    public List<User> selectUserByRoleCode(@Param("roleCode") String username);
 
     int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 

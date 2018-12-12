@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @date Apr 12, 2017 9:13:21 AM  
  */
-@Mapper
+//@Mapper
 public interface UserMapper extends BaseMapper<String, User> {
 
 
