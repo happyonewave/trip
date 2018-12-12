@@ -6,8 +6,8 @@ import com.qin.common.util.salt.Digests;
 import com.qin.common.util.salt.Encodes;
 import com.qin.config.pk.FactoryAboutKey;
 import com.qin.config.pk.TableEnum;
-import com.qin.mapper.auth.RoleMapper;
-import com.qin.mapper.auth.UserRoleMapper;
+// import com.qin.mapper.auth.RoleMapper;
+// import com.qin.mapper.auth.UserRoleMapper;
 import com.qin.mapper.simple.UserMapper;
 import com.qin.model.auth.Role;
 import com.qin.model.auth.UserRole;
@@ -32,11 +32,11 @@ public class UserServiceImpl implements UserService {
     public static final int HASH_INTERATIONS = 1024;
     private static final int SALT_SIZE = 8;
 
-    @Autowired
-    private RoleMapper roleMapper;
-
-    @Autowired
-    private UserRoleMapper userRoleMapper;
+//    @Autowired
+//    private RoleMapper roleMapper;
+//
+//    @Autowired
+//    private UserRoleMapper userRoleMapper;
 
     @Autowired
     private UserMapper userMapper;

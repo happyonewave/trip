@@ -1,7 +1,8 @@
 package com.qin.service.auth.impl;
 
-import com.qin.mapper.auth.RoleMapper;
+// import com.qin.mapper.auth.RoleMapper;
 //import com.qin.mapper.auth.UserMapper;
+
 import com.qin.mapper.simple.UserMapper;
 import com.qin.model.auth.Role;
 //import com.qin.model.auth.User;
@@ -18,8 +19,8 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private RoleMapper roleMapper;
+//    @Autowired
+//    private RoleMapper roleMapper;
 
     @Override
     public User findUserByName(String username) {
@@ -28,12 +29,14 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public Role findRoleByRoleCode(String roleCode) {
-        return roleMapper.findRoleByCode(roleCode);
+//        return roleMapper.findRoleByCode(roleCode);
+        return null;
     }
 
     @Override
     public List<User> findUserByRoleCode(String roleCode) {
-        return userMapper.selectUserByRoleCode(roleCode);
+//        return userMapper.selectUserByRoleCode(roleCode);
+        return null;
     }
 
 }

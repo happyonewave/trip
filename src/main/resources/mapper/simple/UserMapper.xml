@@ -7,7 +7,7 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="salt" property="salt" jdbcType="VARCHAR" />
     <result column="openid" property="openid" jdbcType="VARCHAR" />
-    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <!--<result column="role_id" property="roleId" jdbcType="INTEGER" />-->
     <result column="nickname" property="nickname" jdbcType="VARCHAR" />
     <result column="extend" property="extend" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
@@ -74,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, username, password, salt, openid, role_id, nickname, extend, phone, delete_time, 
+    id, username, password, salt, openid,  nickname, extend, phone, delete_time,
     create_time, update_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qin.model.simple.UserExample" >
@@ -92,13 +92,13 @@
     </if>
   </select>
 
-  <select id="selectUserByRoleCode" parameterType="string"  resultMap="BaseResultMap">
+  <!--<select id="selectUserByRoleCode" parameterType="string"  resultMap="BaseResultMap">-->
 
-    p.id,  p.username,  p.password,  p.salt,  p.openid,  p.role_id,  p.nickname,  p.extend,  p.phone,  p.delete_time,
-     p.create_time,  p.update_time
-    		from user u, t_sys_role r, t_sys_user_role ur
-		where u.id=ur.user_id and r.id=ur.role_id and r.code=#{roleCode}
-	</select>
+    <!--p.id,  p.username,  p.password,  p.salt,  p.openid,   p.nickname,  p.extend,  p.phone,  p.delete_time,-->
+     <!--p.create_time,  p.update_time-->
+    		<!--from user u, t_sys_role r, t_sys_user_role ur-->
+		<!--where u.id=ur.user_id and r.id=ur.role_id and r.code=#{roleCode}-->
+	<!--</select>-->
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -124,14 +124,14 @@
   </delete>
   <insert id="insert" parameterType="com.qin.model.simple.User" >
     insert into user (id, username, password, 
-      salt, openid, role_id, 
+      salt, openid,
       nickname, extend, phone, 
       delete_time, create_time, update_time
       )
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{salt,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, 
-      #{nickname,jdbcType=VARCHAR}, #{extend,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{deleteTime,jdbcType=DATE}, #{createTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}
+      #{salt,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR},  #{nickname,jdbcType=VARCHAR},
+      #{extend,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},  #{deleteTime,jdbcType=DATE},
+      #{createTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.qin.model.simple.User" >
@@ -151,9 +151,6 @@
       </if>
       <if test="openid != null" >
         openid,
-      </if>
-      <if test="roleId != null" >
-        role_id,
       </if>
       <if test="nickname != null" >
         nickname,
@@ -189,9 +186,6 @@
       </if>
       <if test="openid != null" >
         #{openid,jdbcType=VARCHAR},
-      </if>
-      <if test="roleId != null" >
-        #{roleId,jdbcType=INTEGER},
       </if>
       <if test="nickname != null" >
         #{nickname,jdbcType=VARCHAR},
@@ -237,9 +231,6 @@
       <if test="record.openid != null" >
         openid = #{record.openid,jdbcType=VARCHAR},
       </if>
-      <if test="record.roleId != null" >
-        role_id = #{record.roleId,jdbcType=INTEGER},
-      </if>
       <if test="record.nickname != null" >
         nickname = #{record.nickname,jdbcType=VARCHAR},
       </if>
@@ -270,7 +261,6 @@
       password = #{record.password,jdbcType=VARCHAR},
       salt = #{record.salt,jdbcType=VARCHAR},
       openid = #{record.openid,jdbcType=VARCHAR},
-      role_id = #{record.roleId,jdbcType=INTEGER},
       nickname = #{record.nickname,jdbcType=VARCHAR},
       extend = #{record.extend,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
@@ -295,9 +285,6 @@
       </if>
       <if test="openid != null" >
         openid = #{openid,jdbcType=VARCHAR},
-      </if>
-      <if test="roleId != null" >
-        role_id = #{roleId,jdbcType=INTEGER},
       </if>
       <if test="nickname != null" >
         nickname = #{nickname,jdbcType=VARCHAR},
@@ -326,7 +313,6 @@
       password = #{password,jdbcType=VARCHAR},
       salt = #{salt,jdbcType=VARCHAR},
       openid = #{openid,jdbcType=VARCHAR},
-      role_id = #{roleId,jdbcType=INTEGER},
       nickname = #{nickname,jdbcType=VARCHAR},
       extend = #{extend,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},

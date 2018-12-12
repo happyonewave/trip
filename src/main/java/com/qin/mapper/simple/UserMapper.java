@@ -24,7 +24,7 @@ public interface UserMapper {
 
     User selectByUserName(String username);
 
-    public List<User> selectUserByRoleCode(@Param("roleCode") String username);
+//    public List<User> selectUserByRoleCode(@Param("roleCode") String username);
 
     int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 

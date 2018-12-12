@@ -8,19 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="13a31eda-84d4-4305-8d2b-462e6e755bba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/AuthorizingRealmImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/AuthorizingRealmImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/vo/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/vo/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/RoleMapper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/model/simple/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/model/simple/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/model/simple/UserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/model/simple/UserExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/RoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/simple/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/simple/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qin/InitServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qin/InitServiceTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,43 +137,43 @@
     <session id="-1602304077">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="26" />
-          <entry key="java" value="2224" />
+          <entry key="dummy" value="36" />
+          <entry key="java" value="2466" />
           <entry key="jsp" value="1231" />
-          <entry key="xml" value="156" />
+          <entry key="xml" value="170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2224" />
+          <entry key="JAVA" value="2466" />
           <entry key="JSP" value="1231" />
-          <entry key="PLAIN_TEXT" value="26" />
-          <entry key="SQL" value="5" />
-          <entry key="XML" value="151" />
+          <entry key="PLAIN_TEXT" value="36" />
+          <entry key="SQL" value="7" />
+          <entry key="XML" value="163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="8" />
+          <entry key="class" value="9" />
           <entry key="dtd" value="1" />
-          <entry key="java" value="147" />
+          <entry key="java" value="171" />
           <entry key="js" value="5" />
           <entry key="jsp" value="37" />
           <entry key="png" value="1" />
           <entry key="properties" value="2" />
-          <entry key="xml" value="24" />
+          <entry key="xml" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="8" />
+          <entry key="CLASS" value="9" />
           <entry key="DTD" value="1" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="147" />
+          <entry key="JAVA" value="171" />
           <entry key="JSP" value="37" />
           <entry key="JavaScript" value="5" />
           <entry key="Properties" value="2" />
-          <entry key="XML" value="24" />
+          <entry key="XML" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -240,64 +233,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/shiro/AuthorizingRealmImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/simple/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="139" column="42" lean-forward="true" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/qin/InitServiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/auth/UserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="39">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/simple/UserMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/RolePermissionMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="68" column="54" lean-forward="true" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
+            <state relative-caret-position="210">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -305,8 +262,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
+            <state relative-caret-position="309">
+              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -317,35 +274,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/UserMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-              <folding>
-                <element signature="e#597#598#0" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#857#858#0" expanded="true" />
-                <element signature="e#919#920#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/AuthService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -361,12 +291,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>edit</find>
-      <find>orderForm</find>
-      <find>新闻</find>
-      <find>logoFile</find>
-      <find>getUUID</find>
-      <find>logger</find>
       <find>multipartFile</find>
       <find>productForm</find>
       <find>list_page</find>
@@ -391,6 +315,12 @@
       <find>t_sys_user</find>
       <find>com.qin.model.auth.User</find>
       <find>userMap</find>
+      <find>Permission</find>
+      <find>import com.qin.mapper.auth.RoleMapper;</find>
+      <find>import com.qin.mapper.auth.UserRoleMapper;</find>
+      <find>import com.qin.mapper.auth.RolePermissionMapper;</find>
+      <find>PermissionService</find>
+      <find>role_id</find>
     </findStrings>
     <replaceStrings>
       <replace>张三</replace>
@@ -420,6 +350,9 @@
       <replace>分类</replace>
       <replace>file</replace>
       <replace>theme</replace>
+      <replace>// import com.qin.mapper.auth.RoleMapper;</replace>
+      <replace>// import com.qin.mapper.auth.UserRoleMapper;</replace>
+      <replace>// import com.qin.mapper.auth.RolePermissionMapper;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -428,15 +361,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/simple/OrderMapper.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/model/simple/ProductVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/ProductMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/ThemeProductMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/model/simple/ThemeProductKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/model/simple/Product.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/qin/ThemeProductKeyServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/qin/ProductServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/service/simple/CommentsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/controller/CommentsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/CommentsMapper.java" />
@@ -470,15 +394,24 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qin/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/service/auth/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/vo/Principal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/AuthorizingRealmImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/qin/InitServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/service/auth/AuthService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/AuthorizingRealmImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/config/shiro/vo/PermissionVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/model/auth/Permission.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/PermissionMapper1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/PermissionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/RoleMapper1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/RolePermissionMapper1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/UserRoleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/RoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/simple/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/RolePermissionMapper.java" />
       </list>
     </option>
   </component>
@@ -584,8 +517,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qin" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trip" type="b2602c69:ProjectViewProjectNode" />
@@ -595,6 +527,18 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qin" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trip" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trip" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qin" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trip" type="b2602c69:ProjectViewProjectNode" />
@@ -651,6 +595,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="qin" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trip" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trip" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qin" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="simple" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -671,6 +625,17 @@
               <item name="qin" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trip" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trip" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="qin" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trip" type="b2602c69:ProjectViewProjectNode" />
@@ -858,7 +823,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544597681099" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544606296771" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1072,7 +1037,7 @@
       <workItem from="1544356788318" duration="8073000" />
       <workItem from="1544489392816" duration="2548000" />
       <workItem from="1544505040305" duration="34171000" />
-      <workItem from="1544589242781" duration="6142000" />
+      <workItem from="1544589242781" duration="11744000" />
     </task>
     <servers />
   </component>
@@ -1109,7 +1074,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99646000" />
+    <option name="totallyTimeSpent" value="105248000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1121,7 +1086,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1366" height="738" extended-state="7" />
+    <frame x="0" y="30" width="1366" height="738" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.50165564" side_tool="true" weight="0.50078493" />
       <window_info id="Designer" order="1" />
@@ -1130,7 +1096,7 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Web" order="5" sideWeight="0.50165564" side_tool="true" weight="0.50078493" />
       <window_info id="Image Layers" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.49834436" visible="true" weight="0.33560607" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.49834436" visible="true" weight="0.33560607" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294702" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.8096027" />
@@ -1139,7 +1105,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294702" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3294702" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49772727" visible="true" weight="0.8576159" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49772727" weight="0.8576159" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5022727" side_tool="true" weight="0.32615894" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -1203,89 +1169,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/datasource/TargetDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/datasource/DynamicDataSourceContextHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/pk/local/LocalIdGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/pk/local/impl/LocalIdGeneratorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-jdk/src.zip!/java/util/UUID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="53" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.11.RELEASE/spring-core-4.3.11.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/simple/ProductMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1418">
-          <caret line="137" column="20" lean-forward="true" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/pk/FactoryAboutKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="34" column="66" lean-forward="true" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/images/photos/user2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.11.RELEASE/spring-core-4.3.11.RELEASE.jar!/org/springframework/util/ResourceUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/page.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-jdk/src.zip!/java/net/URL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="745" column="18" selection-start-line="745" selection-start-column="18" selection-end-line="745" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-360">
@@ -1488,7 +1371,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/qin/InitServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="98" column="13" lean-forward="true" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+          <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1498,39 +1381,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/AuthService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/shiro/AuthorizingRealmImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="139" column="42" lean-forward="true" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1545,24 +1398,114 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/controller/LoginController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/session/Session.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="68" column="54" lean-forward="true" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
+        <state relative-caret-position="405">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/controller/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
+        <state relative-caret-position="165">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="63" column="33" lean-forward="true" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/shiro/AuthorizingRealmImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="80" column="121" lean-forward="true" selection-start-line="80" selection-start-column="121" selection-end-line="80" selection-end-column="121" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/PermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-jdk/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="108" column="3" lean-forward="true" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/shiro/vo/PermissionEnumUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="176" column="52" lean-forward="true" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/model/auth/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="36" column="17" lean-forward="true" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/config/shiro/vo/PermissionVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/PermissionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/RoleMapper1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/PermissionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/UserRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/RoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1576,10 +1519,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/simple/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/simple/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="210">
+          <caret line="92" column="11" lean-forward="true" selection-start-line="92" selection-start-column="11" selection-end-line="92" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/service/auth/impl/AuthServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qin/mapper/auth/RolePermissionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
