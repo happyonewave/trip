@@ -33,4 +33,9 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    List<User> findUserByKeywords(String keywords);
+
+    List<User> findUserByPage(String keywords);
+
 }
