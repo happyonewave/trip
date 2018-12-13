@@ -25,6 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.swing.*;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
@@ -153,8 +154,11 @@ public class UserServiceImpl implements UserService {
 //        List<User> user = userMapper.findUserByPage(keywords);
         UserExample example = new UserExample();
         example.setOrderByClause("create_time desc");
-        UserExample.Criteria criteria =  example.createCriteria();
+        UserExample.Criteria criteria = example.createCriteria();
         criteria.andSaltIsNull();
+        if (keywords!=null&&!StringUtils.isBlank(keywords)){
+            criteria.andNicknameLike("%" + keywords + "%");
+        }
         List<User> user = userMapper.selectByExample(example);
 //        List<User> user = userMapper.select();
         // 用PageInfo对结果进行包装

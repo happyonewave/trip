@@ -12,11 +12,8 @@ import com.qin.config.pk.FactoryAboutKey;
 import com.qin.config.pk.TableEnum;
 import com.qin.mapper.simple.ProductMapper;
 import com.qin.mapper.simple.ThemeProductMapper;
-import com.qin.model.simple.Product;
-import com.qin.model.simple.ProductExample;
+import com.qin.model.simple.*;
 import com.qin.model.simple.ProductExample.Criteria;
-import com.qin.model.simple.ThemeProductExample;
-import com.qin.model.simple.ThemeProductKey;
 import com.qin.service.simple.ProductService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -178,7 +175,12 @@ public class ProductServiceImpl implements ProductService {
         // 紧跟着的第一个select方法会被分页
 //        List<Product> product = productMapper.findProductByPage(keywords);
 //        List<Product> product = productMapper.selectByExample(new ProductExample());
-        List<Product> product = productMapper.select();
+        ProductExample example = new ProductExample();
+        Criteria criteria = example.createCriteria();
+        if (keywords != null && !StringUtils.isBlank(keywords)) {
+            criteria.andIdEqualTo("p.id", Integer.parseInt(keywords));
+        }
+        List<Product> product = productMapper.selectByExample(example);
         // 用PageInfo对结果进行包装
         PageInfo<Product> page = new PageInfo<Product>(product);
         // 测试PageInfo全部属性

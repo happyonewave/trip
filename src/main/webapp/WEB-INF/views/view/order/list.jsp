@@ -19,6 +19,7 @@
 <link href="${ctx}/static/css/plugins/iCheck/green.css" rel="stylesheet">
 <link href="${ctx}/static/css/animate.css" rel="stylesheet">
 <link href="${ctx}/static/css/style.css" rel="stylesheet">
+<link href="${ctx}/static/css/style.css" rel="stylesheet">
 </head>
 
 <body class="fixed-sidebar">
@@ -54,7 +55,7 @@
 					<div class="row">
 						<div class="col-md-5">
 							<div class="input-group">
-								<input type="text" class="input-sm form-control" id="keywords" name="keywords" value="" placeholder="新闻标题"> <span class="input-group-btn"><button type="button" class="btn btn-sm btn-primary" id="queryNewsBtn">查询</button></span>
+								<input type="text" class="input-sm form-control" id="keywords" name="keywords" value="" placeholder="订单号"> <span class="input-group-btn"><button type="button" class="btn btn-sm btn-primary" id="queryOrderBtn">查询</button></span>
 							</div>
 						</div>
 					</div>
@@ -89,7 +90,7 @@
 			<div class="modal-content">
 				<div class="modal-header bg-primary">
 					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-					<h4 class="modal-title">编辑重新发布新闻</h4>
+					<h4 class="modal-title">编辑重新发布订单</h4>
 				</div>
 				<div class="modal-body">
 					<%--<form role="form" id="orderForm" name="orderForm" class="form-horizontal"></form>--%>
@@ -157,8 +158,8 @@
                 editForm(form);
             });
 		});
-      //查询新闻
-      $("#queryNewsBtn").click(function() {
+      //查询订单
+      $("#queryOrderBtn").click(function() {
         list_page();
       });
 

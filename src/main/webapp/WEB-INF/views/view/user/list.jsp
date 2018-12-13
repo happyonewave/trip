@@ -54,7 +54,7 @@
 					<div class="row">
 						<div class="col-md-5">
 							<div class="input-group">
-								<input type="text" class="input-sm form-control" id="keywords" name="keywords" value="" placeholder="新闻标题"> <span class="input-group-btn"><button type="button" class="btn btn-sm btn-primary" id="queryNewsBtn">查询</button></span>
+								<input type="text" class="input-sm form-control" id="keywords" name="keywords" value="" placeholder="用户昵称"> <span class="input-group-btn"><button type="button" class="btn btn-sm btn-primary" id="queryUserBtn">查询</button></span>
 							</div>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 			<div class="modal-content">
 				<div class="modal-header bg-primary">
 					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-					<h4 class="modal-title">编辑重新发布新闻</h4>
+					<h4 class="modal-title">编辑重新发布用户</h4>
 				</div>
 				<div class="modal-body">
 					<form role="form" id="userForm" name="userForm" class="form-horizontal"></form>
@@ -134,8 +134,8 @@
         }
       });
 
-      //查询新闻
-      $("#queryNewsBtn").click(function() {
+      //查询用户
+      $("#queryUserBtn").click(function() {
         list_page();
       });
 

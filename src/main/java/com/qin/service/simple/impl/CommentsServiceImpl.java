@@ -138,6 +138,10 @@ public class CommentsServiceImpl implements CommentsService {
 //        List<Comments> comments = commentsMapper.findCommentsByPage(keywords);
         CommentsExample example = new CommentsExample();
         example.setOrderByClause("time desc");
+
+        if (keywords!=null&&!StringUtils.isBlank(keywords)){
+            example.createCriteria().andProductIdEqualTo(Integer.parseInt(keywords));
+        }
         List<Comments> comments = commentsMapper.selectByExampleWithBLOBs(example);
 //        List<Comments> comments = commentsMapper.select();
         // 用PageInfo对结果进行包装

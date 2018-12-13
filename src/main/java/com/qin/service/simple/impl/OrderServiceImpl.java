@@ -147,7 +147,11 @@ public class OrderServiceImpl implements OrderService {
         PageHelper.startPage(pageNum, Constants.PAGE_SIZE);
         // 紧跟着的第一个select方法会被分页
 //        List<Order> order = orderMapper.findOrderByPage(keywords);
-        List<Order> order = orderMapper.selectByExample(new OrderExample());
+        OrderExample example = new OrderExample();
+        if (keywords!=null&&!StringUtils.isBlank(keywords)){
+            example.createCriteria().andOrderNoLike("%" + keywords + "%");
+        }
+        List<Order> order = orderMapper.selectByExample(example);
         // 用PageInfo对结果进行包装
         PageInfo<Order> page = new PageInfo<Order>(order);
         // 测试PageInfo全部属性

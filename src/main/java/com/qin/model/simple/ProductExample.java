@@ -147,6 +147,11 @@ public class ProductExample {
             return (Criteria) this;
         }
 
+        public Criteria andIdEqualTo(String condition_field, Integer value) {
+            addCriterion(condition_field+" =", value, "id");
+            return (Criteria) this;
+        }
+
         public Criteria andIdNotEqualTo(Integer value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;

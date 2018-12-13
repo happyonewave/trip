@@ -54,7 +54,7 @@
 					<div class="row">
 						<div class="col-md-5">
 							<div class="input-group">
-								<input type="text" class="input-sm form-control" id="keywords" name="keywords" value="" placeholder="新闻标题"> <span class="input-group-btn"><button type="button" class="btn btn-sm btn-primary" id="queryNewsBtn">查询</button></span>
+								<input type="text" class="input-sm form-control" id="keywords" name="keywords" value="" placeholder="产品号"> <span class="input-group-btn"><button type="button" class="btn btn-sm btn-primary" id="queryCommentsBtn">查询</button></span>
 							</div>
 						</div>
 					</div>
@@ -89,10 +89,10 @@
 			<div class="modal-content">
 				<div class="modal-header bg-primary">
 					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-					<h4 class="modal-title">编辑重新发布新闻</h4>
+					<h4 class="modal-title">编辑重新发布评价</h4>
 				</div>
 				<div class="modal-body">
-					<form role="form" id="productForm" name="productForm" class="form-horizontal"></form>
+					<form role="form" id="commentsForm" name="commentsForm" class="form-horizontal"></form>
 				</div>
 			</div>
 		</div>
@@ -127,27 +127,27 @@
         radioClass: 'iradio_minimal-green',
       });
       //表单验证
-      $("#productForm").validate({
+      $("#commentsForm").validate({
         //debug: true,
         submitHandler: function(form) {
           editForm(form);
         }
       });
 
-      //查询新闻
-      $("#queryNewsBtn").click(function() {
+      //查询评价
+      $("#queryCommentsBtn").click(function() {
         list_page();
       });
 
       // 分页查询
       function list_page() {
         var keywords = $("#keywords").val();
-        $("#ibox").load(_ctx + '/product/list_page',{"keywords":keywords});
+        $("#ibox").load(_ctx + '/comments/list_page',{"keywords":keywords});
       }
 
       function editForm(form) {
         $.ajax({
-          url: _ctx + "/product/edit",
+          url: _ctx + "/comments/edit",
           type: "post",
           data: $(form).serialize(),
           success: function(data) {
@@ -168,7 +168,7 @@
       $("#edit").on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget);
         var id = button.data("id");
-        $("#productForm").load(_ctx + '/product/load/' + id);//加载待编辑数据
+        $("#commentsForm").load(_ctx + '/comments/load/' + id);//加载待编辑数据
       });
     });
   </script>

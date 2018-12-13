@@ -23,7 +23,7 @@
         <where>
             <foreach collection="oredCriteria" item="criteria" separator="or">
                 <if test="criteria.valid">
-                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                    <trim prefix="" suffix="" prefixOverrides="and">
                         <foreach collection="criteria.criteria" item="criterion">
                             <choose>
                                 <when test="criterion.noValue">
@@ -80,29 +80,60 @@
         </where>
     </sql>
     <sql id="Base_Column_List">
-    id, name, price, stock, main_img_url, summary, img_id, introduction, `from`, theme,
-    type, city, discount, delete_time, create_time, updata_time
-  </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qin.model.simple.ProductExample">
+           id, name, price, stock, main_img_url, summary, img_id, introduction, `from`, theme,
+           type, city, discount, delete_time, create_time, updata_time
+         </sql>
+
+
+    <sql id="Select_Column_List">
+           p.id, p.name, p.price, p.stock, p.main_img_url, p.summary, p.img_id, p.introduction, p.`from`, p.theme,
+           p.type, p.city, p.discount, p.delete_time, p.create_time, p.updata_time
+         </sql>
+
+    <select id="selectByExample" resultMap="SelectResultMap" parameterType="com.qin.model.simple.ProductExample">
         select
         <if test="distinct">
             distinct
         </if>
-        <include refid="Base_Column_List"/>
-        from product
-        <if test="_parameter != null">
-            <include refid="Example_Where_Clause"/>
-        </if>
+        <include refid="Select_Column_List"/>
+        from product p,theme t,Theme_product tp
+        <where>
+            <if test="_parameter != null">
+                <foreach collection="oredCriteria" item="criteria" separator="or">
+                    <if test="criteria.valid">
+                        <trim prefix="" suffix="" prefixOverrides="and">
+                            <foreach collection="criteria.criteria" item="criterion">
+                                <choose>
+                                    <when test="criterion.noValue">
+                                        and ${criterion.condition}
+                                    </when>
+                                    <when test="criterion.singleValue">
+                                        and ${criterion.condition} #{criterion.value}
+                                    </when>
+                                    <when test="criterion.betweenValue">
+                                        and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                    </when>
+                                    <when test="criterion.listValue">
+                                        and ${criterion.condition}
+                                        <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                                 separator=",">
+                                            #{listItem}
+                                        </foreach>
+                                    </when>
+                                </choose>
+                            </foreach>
+                        </trim>
+                    </if>
+                </foreach>
+                and
+            </if>
+            p.id = tp.product_id and t.id = tp.theme_id
+        </where>
         <if test="orderByClause != null">
             order by ${orderByClause}
         </if>
     </select>
 
-
-    <sql id="Select_Column_List">
-    p.id, p.name, p.price, p.stock, p.main_img_url, p.summary, p.img_id, p.introduction, p.`from`, p.theme,
-    p.type, p.city, p.discount, p.delete_time, p.create_time, p.updata_time
-  </sql>
 
     <select id="select" resultMap="SelectResultMap">
         select
@@ -139,9 +170,9 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from product
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
+           delete from product
+           where id = #{id,jdbcType=INTEGER}
+         </delete>
     <delete id="deleteByExample" parameterType="com.qin.model.simple.ProductExample">
         delete from product
         <if test="_parameter != null">
@@ -149,19 +180,19 @@
         </if>
     </delete>
     <insert id="insert" parameterType="com.qin.model.simple.Product">
-    insert into product ( name, price,
-      stock, main_img_url, summary,
-      img_id, introduction, `from`,
-      type, city,
-      discount, delete_time, create_time,
-      updata_time)
-    values (#{name,jdbcType=VARCHAR}, #{price,jdbcType=REAL},
-      #{stock,jdbcType=INTEGER}, #{mainImgUrl,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR},
-      #{imgId,jdbcType=INTEGER}, #{introduction,jdbcType=VARCHAR}, #{from,jdbcType=VARCHAR},
-      #{type,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{discount,jdbcType=INTEGER},
-      #{deleteTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP},
-      #{updataTime,jdbcType=TIMESTAMP})
-  </insert>
+           insert into product ( name, price,
+             stock, main_img_url, summary,
+             img_id, introduction, `from`,
+             type, city,
+             discount, delete_time, create_time,
+             updata_time)
+           values (#{name,jdbcType=VARCHAR}, #{price,jdbcType=REAL},
+             #{stock,jdbcType=INTEGER}, #{mainImgUrl,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR},
+             #{imgId,jdbcType=INTEGER}, #{introduction,jdbcType=VARCHAR}, #{from,jdbcType=VARCHAR},
+             #{type,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{discount,jdbcType=INTEGER},
+             #{deleteTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP},
+             #{updataTime,jdbcType=TIMESTAMP})
+         </insert>
     <insert id="insertSelective" parameterType="com.qin.model.simple.Product" useGeneratedKeys="true" keyProperty="id">
         insert into product
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -193,7 +224,7 @@
                 `from`,
             </if>
             <!--<if test="theme != null">-->
-                <!--theme,-->
+            <!--theme,-->
             <!--</if>-->
             <if test="type != null">
                 type,
@@ -243,7 +274,7 @@
                 #{from,jdbcType=VARCHAR},
             </if>
             <!--<if test="theme != null">-->
-                <!--#{theme,jdbcType=INTEGER},-->
+            <!--#{theme,jdbcType=INTEGER},-->
             <!--</if>-->
             <if test="type != null">
                 #{type,jdbcType=VARCHAR},
