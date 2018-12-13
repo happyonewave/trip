@@ -32,7 +32,7 @@
     <div id="page-wrapper" class="gray-bg">
         <!---顶部状态栏 star-->
         <div class="row ">
-            <nav class="navbar navbar-fixed-top" role="navigation" id="topnav"></nav>
+            <nav class="navbar navbar-fixed-top navbar-default" role="navigation" id="topnav"></nav>
         </div>
         <!---顶部状态栏 end-->
 
@@ -173,6 +173,21 @@
     <%--</div>--%>
 </div>
 
+<!----添加用户--->
+<div class="modal fade" id="update-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">修改密码</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="passwordForm" name="passwordForm" class="form-horizontal"></form>
+            </div>
+        </div>
+    </div>
+</div>
+<!---添加用户结束--->
 
 <%--<div class="modal tabs-modal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true">--%>
 <%--<div class="modal-dialog modal-lg">--%>
@@ -221,7 +236,9 @@
 <!-- 插件 scripts -->
 <script src="${ctx}/static/js/plugins/toastr/toastr.min.js" async></script>
 <!---顶部弹出提示--->
-
+<script src="${ctx}/static/js/plugins/validate/jquery.validate.min.js"></script>
+<!---表单验证--->
+<script src="${ctx}/static/js/plugins/validate/validate-cn.js"></script>
 
 <script>
 
@@ -240,8 +257,36 @@
             startCollapsed: true
         };
         a()
+
+        //表单验证
+        $("#passwordForm").validate({
+            //debug: true,
+            submitHandler: function(form) {
+                updatePasswordForm(form);
+            }
+        });
+  
+  
     });
 
+    function updatePasswordForm(form) {
+        $.ajax({
+            url: _ctx + "/user/update/password",
+            type: "post",
+            data: $(form).serialize(),
+            success: function(data) {
+                if (data.status == '1') {
+                    // list_page();//修改成功，刷新数据
+                    toastr.success('', data.msg);
+                    $('#update-password').modal('hide');//关闭窗口
+                } else
+                    toastr.error('', data.msg);
+            },
+            error: function(data) {
+                toastr.error('', '修改失败');
+            }
+        });
+    }
     /**
      $('#my_multi_select3').multiSelect({
      selectableHeader: "<div class='custom-header '><h4>未开通城市<small>（列表中点击即可开通）</small></h4></div><input type='text' class='form-control search-input' autocomplete='off' placeholder='搜索城市...'>",

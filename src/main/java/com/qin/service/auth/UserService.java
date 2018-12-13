@@ -18,6 +18,9 @@ public interface UserService {
 
     List<User> select();
 
+    abstract void entryptPassword(User user);
+
+    abstract String getEntryptPassword(User oldUser,String oldPassword);
     /**
      * 新增用户
      *
@@ -34,7 +37,7 @@ public interface UserService {
      * @param usr         当前用户
      * @author zhangsan
      */
-    public void updatePassword(User user);
+    public boolean updatePassword(User user);
 
     /**
      * 根据用户名查询用户

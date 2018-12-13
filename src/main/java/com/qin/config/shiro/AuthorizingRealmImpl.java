@@ -102,7 +102,7 @@ public class AuthorizingRealmImpl extends AuthorizingRealm {
         Set<String> permissions = new HashSet<String>();
         Object permisObj = session.getAttribute(Constants.PERMISSION_URL);
         if (null == permisObj) {
-            Collection<PermissionVo> pers = permissionService.getPermissions(principal.getUser().getId()+"");
+            Collection<PermissionVo> pers = permissionService.getPermissions(principal.getUser().getId() + "");
             for (PermissionVo permission : pers) {
                 permissions.add(permission.getUrl());
                 if (CollectionUtils.isNotEmpty(permission.getChildren())) {
@@ -119,7 +119,7 @@ public class AuthorizingRealmImpl extends AuthorizingRealm {
         Set<String> roleCodes = new HashSet<String>();
         Object roleNameObj = session.getAttribute(Constants.ROLE_CODE);
         if (null == roleNameObj) {
-            for (Role role : roleService.findRoleByUserId(principal.getUser().getId()+"")) {
+            for (Role role : roleService.findRoleByUserId(principal.getUser().getId() + "")) {
                 roleCodes.add(role.getCode());
             }
             session.setAttribute(Constants.ROLE_CODE, roleCodes);
@@ -138,9 +138,10 @@ public class AuthorizingRealmImpl extends AuthorizingRealm {
      */
     @PostConstruct
     public void initCredentialsMatcher() {
-        HashedCredentialsMatcher matcher = new HashedCredentialsMatcher("SHA-1");
-        matcher.setHashIterations(1024);
-        setCredentialsMatcher(matcher);
+//        HashedCredentialsMatcher matcher = new HashedCredentialsMatcher("SHA-1");
+//        matcher.setHashIterations(1024);
+//        setCredentialsMatcher(matcher);
+        setCredentialsMatcher(new CustomCredentialsMatcher());
     }
 
 }

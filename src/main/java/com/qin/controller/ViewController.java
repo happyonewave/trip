@@ -413,4 +413,9 @@ public class ViewController {
         return "view/refund/view";
     }
 
+    @RequestMapping(value = "view/user/update/password", method = RequestMethod.GET)
+    String update_password() {
+        log.info("# loding view/user/update_password_form");
+        return "view/user/update_password_form";
+    }
 }

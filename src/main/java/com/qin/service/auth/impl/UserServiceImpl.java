@@ -156,7 +156,7 @@ public class UserServiceImpl implements UserService {
         example.setOrderByClause("create_time desc");
         UserExample.Criteria criteria = example.createCriteria();
         criteria.andSaltIsNull();
-        if (keywords!=null&&!StringUtils.isBlank(keywords)){
+        if (keywords != null && !StringUtils.isBlank(keywords)) {
             criteria.andNicknameLike("%" + keywords + "%");
         }
         List<User> user = userMapper.selectByExample(example);
@@ -173,12 +173,24 @@ public class UserServiceImpl implements UserService {
     /**
      * 设定安全的密码，生成随机的salt并经过1024次 sha-1 hash
      */
-    private void entryptPassword(User user) {
+    @Override
+    public void entryptPassword(User user) {
         byte[] salt = Digests.generateSalt(SALT_SIZE);
         user.setSalt(Encodes.encodeHex(salt));
 
         byte[] hashPassword = Digests.sha1(user.getPassword().getBytes(), salt, HASH_INTERATIONS);
         user.setPassword(Encodes.encodeHex(hashPassword));
+    }
+
+    @Override
+    public String getEntryptPassword(User oldUser, String oldPassword) {
+        byte[] salt = Encodes.decodeHex(oldUser.getSalt());
+//        user.setSalt(Encodes.encodeHex(salt));
+
+        System.out.println("oldPassword:" + oldPassword);
+        System.out.println("salt:" + salt);
+        byte[] hashPassword = Digests.sha1(oldPassword.getBytes(), salt, HASH_INTERATIONS);
+        return Encodes.encodeHex(hashPassword);
     }
 
     @Transactional
@@ -222,16 +234,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updatePassword(User user) {
-//        if (log.isDebugEnabled()) {
-//            log.debug("## update User password.");
-//        }
-//        User u = userMapper.selectByPrimaryKey(user.getId());
-//        u.setPassword(user.getPassword());
-//        entryptPassword(u);
+    public boolean updatePassword(User user) {
+
+        if (user != null) {
+            if (log.isDebugEnabled()) {
+                log.debug("## update User password.");
+            }
+            User u = userMapper.selectByPrimaryKey(user.getId());
+            u.setPassword(user.getPassword());
+            entryptPassword(u);
 //        u.setModifyTime(Calendar.getInstance().getTime());
-//        // daoService.update(u);
-//        userMapper.updateByPrimaryKeySelective(u);
+            // daoService.update(u);
+            int flag = userMapper.updateByPrimaryKeySelective(u);
+            if (flag == 1)
+                return true;
+            else
+                return false;
+        } else
+            return false;
     }
 
     @Override
