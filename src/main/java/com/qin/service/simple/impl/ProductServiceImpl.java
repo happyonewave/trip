@@ -177,6 +177,7 @@ public class ProductServiceImpl implements ProductService {
 //        List<Product> product = productMapper.selectByExample(new ProductExample());
         ProductExample example = new ProductExample();
         Criteria criteria = example.createCriteria();
+        example.setOrderByClause("create_time desc");
         if (keywords != null && !StringUtils.isBlank(keywords)) {
             criteria.andIdEqualTo("p.id", Integer.parseInt(keywords));
         }
