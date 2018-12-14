@@ -11,7 +11,7 @@
  Target Server Version : 100137
  File Encoding         : 65001
 
- Date: 14/12/2018 10:12:53
+ Date: 14/12/2018 11:42:48
 */
 
 SET NAMES utf8mb4;
@@ -4294,7 +4294,7 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (8, NULL, NULL, NULL, 'oBLcn43wKzKzxL_jh1jf6QkLlyDY', 'user', NULL, '1356789087654', NULL, '2018-09-01', NULL);
-INSERT INTO `user` VALUES (2147483647, 'zhangsan', '18ab6b304c74b3006f90aeae97df31a6454e7f72', '14864bff6424ba44', NULL, '', NULL, '', NULL, NULL, NULL);
+INSERT INTO `user` VALUES (2147483647, 'admin', '31bfb44f2c46ab41e22bf56e9af833e645cfc1bc', '14864bff6424ba44', NULL, '', NULL, '', NULL, NULL, NULL);
 INSERT INTO `user` VALUES (11, NULL, '', NULL, NULL, 'test_nickname1', NULL, '13456781321', NULL, '2018-12-13', NULL);
 INSERT INTO `user` VALUES (12, NULL, '4c3e758c9616c41981e0f1c8ac1f1c85592dc5ef', NULL, NULL, 'test_nickname2', NULL, '13456782322', NULL, '2018-12-13', NULL);
 INSERT INTO `user` VALUES (13, NULL, '35b75f14a987699909a464fa09ce84932848e658', NULL, NULL, 'test_nickname3', NULL, '13456783323', NULL, '2018-12-13', NULL);

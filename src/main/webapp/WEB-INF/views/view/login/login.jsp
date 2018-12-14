@@ -58,8 +58,8 @@ body {
 	<div class="container">
 		<form action="${ctx }/login" class="form-signin" id="userForm" method="POST">
 			<h3 class="form-signin-heading">请登录</h3>
-			<input type="text" class="form-control input-block-level" id="username" name="username" placeholder="用户" value="zhangsan">
-			<input type="password" class="form-control input-block-level" id="password" name="password" placeholder="密码" value="123456">
+			<input type="text" class="form-control input-block-level" id="username" name="username" placeholder="用户名" value="">
+			<input type="password" class="form-control input-block-level" id="password" name="password" placeholder="密码" value="">
 			<button class="btn btn-large btn-primary" type="submit">登录</button>
 			</br>
 			</br>
