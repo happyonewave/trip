@@ -5,6 +5,7 @@ import com.qin.common.util.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ClassUtils;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.context.ServletContextAware;
 
@@ -27,13 +28,16 @@ public class ApplicationContext implements ServletContextAware {
         String datetime = DateUtil.dateToString(Calendar.getInstance().getTime(), DateUtil.fm_yyyyMMddHHmmssSSS);
         String contextPath = context.getContextPath();
 
-        File filePath = null;
+        String filePath = null;
         try {
-            filePath = new File(ResourceUtils.getURL(ResourceUtils.WAR_URL_PREFIX).getPath());
+//            filePath = new File(ResourceUtils.getURL(ResourceUtils.WAR_URL_PREFIX).getPath());
+//            filePath = ClassUtils.getDefaultClassLoader().getResource("").getPath();
+            filePath = context.getRealPath("");
+//            filePath =  System.getProperty("user.dir");
 //            File upload = new File(filePath.getAbsolutePath(),"src/main/webapp/static/images/product");
-            imagePath = filePath + "src/main/webapp/static/images/product";
-            context.setAttribute("imagePath", filePath + "src/main/webapp/static/images/product");
-        } catch (FileNotFoundException e) {
+            imagePath = filePath + "static/images/product";
+            context.setAttribute("imagePath", filePath + "static/images/product");
+        } catch (Exception e) {
             throw new BusinessException("获取路径错误");
         }
         log.info("# version={} , contextPath={}", datetime, contextPath);
